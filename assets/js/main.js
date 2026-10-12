@@ -232,9 +232,10 @@
     const tl = gsap.timeline({ delay });
     tl.fromTo(".hero__media .ph", { scale: 1.14 }, { scale: 1, duration: 2.4, ease: "expo.out" }, 0)
       .fromTo(".hero__title .line > span",
-        { y: 0, yPercent: 105, skewY: 5, transformOrigin: "0% 100%" },
-        { yPercent: 0, skewY: 0, duration: 1.45, ease: "expo.out", stagger: 0.12 }, 0.05)
-      .to(".hero__aside > *", { opacity: 1, duration: 1, ease: "power2.out", stagger: 0.1 }, 0.75);
+        { y: 0, yPercent: 105 },
+        { yPercent: 0, duration: 1.5, ease: "expo.out" }, 0.05)
+      .fromTo(".hero__rule", { opacity: 1, scaleX: 0 }, { scaleX: 1, duration: 1.3, ease: "expo.inOut" }, 0.35)
+      .to(".hero__foot > *", { opacity: 1, duration: 1, ease: "power2.out", stagger: 0.1 }, 0.85);
     return tl;
   }
 

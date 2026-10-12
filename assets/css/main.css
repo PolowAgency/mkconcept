@@ -4,16 +4,16 @@
    ========================================================================== */
 
 @font-face {
-  font-family: "Bodoni Moda";
-  src: url("../fonts/bodoni-moda.woff2") format("woff2");
-  font-weight: 400 700;
+  font-family: "Instrument Serif";
+  src: url("../fonts/instrument-serif.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Bodoni Moda";
-  src: url("../fonts/bodoni-moda-italic.woff2") format("woff2");
-  font-weight: 400 700;
+  font-family: "Instrument Serif";
+  src: url("../fonts/instrument-serif-italic.woff2") format("woff2");
+  font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
@@ -36,11 +36,11 @@
   --c-placeholder: #1a1612;
 
   /* Typographie */
-  --f-serif: "Bodoni Moda", "Bodoni 72", Didot, "Times New Roman", serif;
+  --f-serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
   --f-sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
   --fs-body: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   --fs-label: 0.6875rem;
-  --fs-hero: clamp(5rem, 29vw, 26rem);
+  --fs-hero: clamp(4.25rem, 28vw, 17rem);
   --tracking-label: 0.22em;
 
   /* Rythme */
@@ -134,7 +134,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   text-transform: uppercase;
   line-height: 1.4;
 }
-.serif { font-family: var(--f-serif); font-weight: 400; font-variation-settings: "opsz" 96; }
+.serif { font-family: var(--f-serif); font-weight: 400; }
 .it { font-style: italic; }
 .gold { color: var(--c-gold); }
 
@@ -218,9 +218,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .monogram {
   font-family: var(--f-serif);
-  font-variation-settings: "opsz" 96;
-  font-weight: 500;
-  letter-spacing: -0.06em;
+  font-weight: 400;
+  letter-spacing: -0.04em;
   line-height: 1;
 }
 .monogram i { font-weight: 400; color: var(--c-gold); margin-left: -0.04em; }
@@ -315,7 +314,6 @@ html:not(.js) .menu:target { visibility: visible; clip-path: none; }
   gap: clamp(14px, 3vw, 40px);
   padding: clamp(8px, 1.4vw, 16px) 0;
   font-family: var(--f-serif);
-  font-variation-settings: "opsz" 96;
   font-size: clamp(2.25rem, min(7.4vw, 8.4vh), 6.5rem);
   line-height: 1.04;
   letter-spacing: -0.02em;
@@ -428,7 +426,7 @@ html:not(.js) .gauge { display: none; }
 }
 
 /* --------------------------------------------------------------------------
-   Hero
+   Hero — retenue : un titre posé, un filet de cadran, l'accroche et le bouton
    -------------------------------------------------------------------------- */
 .hero {
   position: relative;
@@ -436,7 +434,7 @@ html:not(.js) .gauge { display: none; }
   min-height: 100svh;
   display: grid;
   align-content: end;
-  padding: var(--nav-h) var(--gutter) calc(var(--gutter) + 8px);
+  padding: var(--nav-h) var(--gutter) calc(var(--gutter) + 12px);
   overflow: hidden;
   isolation: isolate;
 }
@@ -447,74 +445,61 @@ html:not(.js) .gauge { display: none; }
   overflow: hidden;
 }
 .hero__media .ph { will-change: transform; }
-/* Voile chaud pour la lisibilité du titre : vignettage + pied sombre */
+/* Voile chaud pour la lisibilité : pied sombre + léger vignettage */
 .hero__media::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to top, rgba(11, 10, 9, 0.92) 0%, rgba(11, 10, 9, 0.35) 42%, rgba(11, 10, 9, 0) 70%),
-    radial-gradient(130% 100% at 50% 30%, rgba(11, 10, 9, 0) 40%, rgba(11, 10, 9, 0.55) 100%);
+    linear-gradient(to top, rgba(11, 10, 9, 0.88) 0%, rgba(11, 10, 9, 0.3) 38%, rgba(11, 10, 9, 0) 62%),
+    radial-gradient(130% 100% at 50% 30%, rgba(11, 10, 9, 0) 45%, rgba(11, 10, 9, 0.5) 100%);
   pointer-events: none;
 }
 
 .hero__title {
   font-family: var(--f-serif);
-  font-variation-settings: "opsz" 96;
   font-weight: 400;
   font-size: var(--fs-hero);
-  line-height: 0.8;
-  letter-spacing: -0.035em;
-  margin-left: -0.055em;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  margin-left: -0.04em;
 }
-.hero__title .line { padding-bottom: 0.06em; margin-bottom: -0.06em; }
-.hero__title .line--mk span { font-weight: 500; }
-.hero__title .line--concept span {
-  font-style: italic;
-  color: var(--c-gold);
-  letter-spacing: -0.045em;
-  /* Débordement volontaire à droite sur grand écran */
-  white-space: nowrap;
+.hero__title .line { padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.hero__title em { font-style: italic; }
+
+/* Filet gradué façon cadran entre le titre et le pied du hero */
+.hero__rule {
+  height: 7px;
+  margin: clamp(18px, 2.4vw, 32px) 0 clamp(18px, 2.4vw, 28px);
+  background:
+    linear-gradient(var(--c-cream-faint), var(--c-cream-faint)) left bottom / 100% 1px no-repeat,
+    repeating-linear-gradient(90deg, rgba(237, 230, 216, 0.28) 0 1px, transparent 1px 48px) left bottom / 100% 6px no-repeat;
+  transform-origin: left center;
 }
 
-.hero__aside {
+.hero__foot {
   display: grid;
   gap: 22px;
-  margin-top: clamp(22px, 4vw, 40px);
-  max-width: 30rem;
 }
 .hero__tagline {
   font-family: var(--f-serif);
-  font-variation-settings: "opsz" 36;
-  font-size: clamp(1.375rem, 1.1rem + 1.2vw, 2.125rem);
-  line-height: 1.12;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
+  line-height: 1.1;
+  max-width: 18em;
 }
 .hero__tagline em { color: var(--c-gold); }
 .hero__meta { color: var(--c-cream-dim); }
+.hero__cta { justify-self: start; }
 
-/* Desktop : MK à gauche, l'accroche s'installe dans le vide de la première ligne */
 @media (min-width: 900px) {
-  /* "Concept" mord volontairement sur le bord droit */
-  :root { --fs-hero: min(31vw, 47vh, 40rem); }
-  .hero { padding-bottom: calc(var(--gutter) * 0.6); }
-  .hero__grid {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
+  :root { --fs-hero: min(15.5vw, 26vh, 17rem); }
+  .hero__foot {
+    grid-template-columns: 1fr auto auto;
     align-items: end;
+    gap: clamp(24px, 4vw, 72px);
   }
-  .hero__title { display: contents; }
-  .hero__title .line--mk { grid-column: 1; grid-row: 1; margin-left: -0.055em; }
-  .hero__title .line--concept { grid-column: 1 / -1; grid-row: 2; margin-left: -0.055em; margin-right: calc(var(--gutter) * -1.6); }
-  .hero__aside {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: end;
-    align-self: end;
-    margin: 0 0 4.5vw;
-    max-width: 24rem;
-  }
+  .hero__meta { align-self: end; padding-bottom: 6px; }
+  .hero__foot { padding-right: 84px; } /* laisse la place à la jauge */
 }
 
 /* --------------------------------------------------------------------------
@@ -541,7 +526,6 @@ html:not(.js) .gauge { display: none; }
 .section__title {
   margin-top: 28px;
   font-family: var(--f-serif);
-  font-variation-settings: "opsz" 96;
   font-size: clamp(2.75rem, 9vw, 8rem);
   line-height: 0.94;
   letter-spacing: -0.025em;
@@ -553,7 +537,7 @@ html:not(.js) .gauge { display: none; }
    États initiaux d'animation (uniquement si JS + mouvement autorisé)
    -------------------------------------------------------------------------- */
 .js.motion .hero__title .line > span { transform: translateY(105%); }
-.js.motion .hero__aside > * { opacity: 0; }
+.js.motion .hero__foot > *, .js.motion .hero__rule { opacity: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

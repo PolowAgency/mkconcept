@@ -12,7 +12,7 @@ python3 -m http.server 8000   # puis http://localhost:8000
 - `index.html` : contenu, SEO, Open Graph et Schema.org `HairSalon`
 - `assets/css/main.css` : variables (couleurs, typo, rythme, mouvement) en tête de fichier
 - `assets/js/main.js` : intro compte-tours, hero, menu, curseur, jauge de scroll
-- `assets/fonts` : Bodoni Moda et Hanken Grotesk (woff2, sous-ensemble latin)
+- `assets/fonts` : Instrument Serif et Hanken Grotesk (woff2, sous-ensemble latin)
 
 ## Photos
 Les zones `.ph` (« Photo à venir ») sont à remplacer par un `<picture>` en AVIF et WebP, avec un repli JPG. Le modèle est en commentaire au-dessus du hero.
