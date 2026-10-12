@@ -540,6 +540,8 @@ html:not(.js) .menu:target { visibility: visible; clip-path: none; }
   font-size: clamp(1rem, 0.95rem + 0.3vw, 1.1875rem);
   color: var(--c-text);
 }
+.hero__proof { margin-top: 22px; font-size: 0.8125rem; color: var(--c-dim); }
+.hero__proof span { color: var(--c-gold); }
 .hero__ctas {
   display: flex;
   flex-wrap: wrap;
@@ -731,7 +733,7 @@ html:not(.js) .menu:target { visibility: visible; clip-path: none; }
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-areas: "piece piece" "name price";
-  align-items: baseline;
+  align-items: start;
   gap: 6px 20px;
   padding: 20px 0 22px;
   border-bottom: var(--hairline);
@@ -755,12 +757,20 @@ html:not(.js) .menu:target { visibility: visible; clip-path: none; }
 .service__name em { color: var(--c-dim); transition: color 0.45s var(--ease-out); }
 .service__price {
   grid-area: price;
-  font-size: 0.9375rem;
-  color: var(--c-text);
+  font-family: var(--f-serif);
+  font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.625rem);
+  color: var(--c-cream);
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
-.service__price b { font-weight: 400; font-size: 1.25rem; color: var(--c-cream); }
+.service__meta {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--f-sans);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--c-dim);
+}
 
 @media (min-width: 900px) {
   .service {
@@ -908,20 +918,21 @@ html:not(.js) .menu:target { visibility: visible; clip-path: none; }
 /* --------------------------------------------------------------------------
    Avis
    -------------------------------------------------------------------------- */
-.avis__list { display: grid; gap: clamp(48px, 7vw, 96px); }
-.avis__item blockquote {
+.avis__score { display: grid; gap: 28px; align-items: end; }
+.avis__note {
   font-family: var(--f-serif);
-  font-size: clamp(1.75rem, 1.2rem + 2.2vw, 3.2rem);
-  line-height: 1.14;
-  letter-spacing: -0.01em;
+  font-size: clamp(7rem, 4rem + 16vw, 17rem);
+  line-height: 0.82;
+  letter-spacing: -0.04em;
   color: var(--c-cream);
 }
-.avis__item figcaption { margin-top: 20px; font-size: 0.875rem; color: var(--c-dim); }
-.avis__item figcaption span { color: var(--c-gold); }
+.avis__note span { font-style: italic; font-size: 0.32em; letter-spacing: 0; color: var(--c-gold); margin-left: 0.08em; }
+.avis__side { display: grid; gap: 18px; justify-items: start; max-width: 30rem; padding-bottom: 1vw; }
+.avis__count { color: var(--c-dim); }
+.avis__summary { font-family: var(--f-serif); font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.5rem); line-height: 1.12; color: var(--c-cream); }
+.avis__summary em { color: var(--c-gold); }
 @media (min-width: 900px) {
-  .avis__item { max-width: 62%; }
-  .avis__item:nth-child(2) { margin-left: auto; }
-  .avis__item:nth-child(3) { margin-left: 16%; }
+  .avis__score { grid-template-columns: auto 1fr; gap: 6vw; }
 }
 
 /* --------------------------------------------------------------------------
@@ -1059,7 +1070,9 @@ html:not(.js) .menu:target { visibility: visible; clip-path: none; }
 .js.motion [data-lines] .line > span { transform: translateY(105%); }
 .js.motion .hero__kicker,
 .js.motion .hero__sub,
-.js.motion .hero__ctas { opacity: 0; }
+.js.motion .hero__proof { margin-top: 22px; font-size: 0.8125rem; color: var(--c-dim); }
+.hero__proof span { color: var(--c-gold); }
+.hero__ctas { opacity: 0; }
 .js.motion .reveal-clip { clip-path: inset(100% 0 0 0); }
 
 @media (prefers-reduced-motion: reduce) {

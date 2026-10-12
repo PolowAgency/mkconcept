@@ -27,11 +27,11 @@ Chaque `.ph` (« Photo à venir ») se remplace par un `<picture>` en AVIF et We
 - réalisations : 8 photos de coupes, réparties en femme, homme et barbe
 
 ## À compléter avant mise en ligne
-- **Tarifs** : remplacer chaque `xx` dans la section La carte par les prix Planity.
-- **Avis** : recopier 3 vrais avis Google ou Planity mot pour mot.
+- **Tarifs** : relevés sur Planity via des extraits de recherche (octobre 2026), à vérifier sur la vraie page. Les prix barbier (taille de barbe, rasage) manquent et affichent « sur Planity ».
+- **Avis** : la section affiche la note (4,9/5, près de 400 avis). Pour ajouter des citations, recopier 2 ou 3 avis Planity mot pour mot (emplacement indiqué en commentaire).
 - **Texte de Karine** : la citation et le paragraphe sont des propositions, à valider ou réécrire avec elle.
 - **Téléphone** : `03 27 08 07 81` (annuaires). La page Facebook indique `06 28 50 60 98`.
-- **Horaires du lundi** : « après-midi » selon les annuaires, saisi en 14h–19h.
+- **Horaires** : lundi 14h–18h, mardi 9h30–19h, jeudi 10h–20h, samedi 9h–18h (Planity). Mercredi 9h30–19h et vendredi 9h–19h viennent des annuaires.
 - **Domaine** : `mkconcept-douai.fr` est un nom provisoire (canonical, OG, JSON-LD).
 - **Image OG** : `assets/img/og.jpg` est à produire avec une vraie photo.
 - **Mentions légales** : forme juridique, SIRET, hébergeur.

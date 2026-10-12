@@ -229,7 +229,7 @@
       .to(".hero__kicker", { opacity: 1, duration: 0.8 }, 0.1)
       .fromTo(".hero__title .line > span", { y: 0, yPercent: 105 },
         { yPercent: 0, duration: 1.4, ease: "expo.out", stagger: 0.12 }, 0.15)
-      .to([".hero__sub", ".hero__ctas"], { opacity: 1, duration: 1, ease: "power2.out", stagger: 0.12 }, 0.75);
+      .to([".hero__sub", ".hero__ctas", ".hero__proof"], { opacity: 1, duration: 1, ease: "power2.out", stagger: 0.12 }, 0.75);
   }
 
   /* ------------------------------------------------------------------------
@@ -312,12 +312,10 @@
       scrollTrigger: { trigger: ".duo__panels", start: "top 80%", once: true },
     });
 
-    // Avis : chaque citation se pose, sans fondu systématique
-    $$(".avis__item").forEach((item) => {
-      gsap.from(item, {
-        x: item.matches(":nth-child(2)") ? 40 : -40, opacity: 0, duration: 1.4, ease: "expo.out",
-        scrollTrigger: { trigger: item, start: "top 85%", once: true },
-      });
+    // Avis : la note se pose, le texte suit
+    gsap.from(".avis__note", {
+      yPercent: 30, opacity: 0, duration: 1.6, ease: "expo.out",
+      scrollTrigger: { trigger: ".avis__score", start: "top 80%", once: true },
     });
   }
 
