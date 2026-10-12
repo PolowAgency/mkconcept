@@ -8,7 +8,6 @@
 
   const root = document.documentElement;
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   const hasGsap = typeof window.gsap !== "undefined" && typeof window.ScrollTrigger !== "undefined";
   const motion = hasGsap && !reduced;
 
@@ -173,22 +172,6 @@
   }
 
   /* ------------------------------------------------------------------------
-     Curseur
-     ------------------------------------------------------------------------ */
-  if (finePointer && hasGsap) {
-    const cursor = $(".cursor");
-    root.classList.add("has-cursor");
-    const xTo = gsap.quickTo(cursor, "x", { duration: reduced ? 0 : 0.35, ease: "power3.out" });
-    const yTo = gsap.quickTo(cursor, "y", { duration: reduced ? 0 : 0.35, ease: "power3.out" });
-    window.addEventListener("pointermove", (e) => { xTo(e.clientX); yTo(e.clientY); }, { passive: true });
-    document.addEventListener("pointerover", (e) => {
-      cursor.classList.toggle("is-active", !!e.target.closest("a, button, [data-cursor]"));
-    });
-    document.addEventListener("pointerleave", () => cursor.classList.add("is-hidden"));
-    document.addEventListener("pointerenter", () => cursor.classList.remove("is-hidden"));
-  }
-
-  /* ------------------------------------------------------------------------
      Jauge de scroll : l'aiguille monte avec la lecture de la page
      ------------------------------------------------------------------------ */
   const gauge = $(".gauge");
@@ -320,7 +303,7 @@
   }
 
   /* ------------------------------------------------------------------------
-     La carte : onglets accessibles + photo qui suit le curseur
+     La carte : onglets accessibles
      ------------------------------------------------------------------------ */
   const tabs = $$(".tab");
   const panels = $$(".tabpanel");
@@ -353,23 +336,6 @@
     $$("[data-tab-target]").forEach((a) => a.addEventListener("click", () => selectTab(a.dataset.tabTarget)));
   }
 
-  const hoverPhoto = $(".hover-photo");
-  if (hoverPhoto && finePointer && hasGsap) {
-    const ph = $(".ph", hoverPhoto);
-    const xTo = gsap.quickTo(hoverPhoto, "x", { duration: reduced ? 0 : 0.6, ease: "power3.out" });
-    const yTo = gsap.quickTo(hoverPhoto, "y", { duration: reduced ? 0 : 0.6, ease: "power3.out" });
-    const services = $$(".service");
-    services.forEach((row) => {
-      row.addEventListener("pointerenter", (e) => {
-        ph.dataset.ph = `Photo à venir · ${row.dataset.hover}`;
-        gsap.set(hoverPhoto, { x: e.clientX, y: e.clientY });
-        gsap.to(hoverPhoto, { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" });
-      });
-      row.addEventListener("pointermove", (e) => { xTo(e.clientX); yTo(e.clientY); });
-      row.addEventListener("pointerleave", () => gsap.to(hoverPhoto, { opacity: 0, scale: 0.85, duration: 0.4 }));
-    });
-  }
-
   /* ------------------------------------------------------------------------
      Réalisations : défilement horizontal piloté par le scroll (desktop),
      balayage natif au doigt (mobile), filtres et lightbox.
@@ -388,7 +354,7 @@
         scrollTrigger: {
           trigger: ".works__pin",
           start: "center center",
-          end: () => "+=" + dist(),
+          end: () => "+=" + Math.round(dist() * 0.55),
           pin: true,
           scrub: 0.8,
           invalidateOnRefresh: true,
