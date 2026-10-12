@@ -22,7 +22,7 @@ Intro · Hero · 01 Le salon · 02 Karine · 03 Elle & lui · 04 La carte · 05 
 Les images de `assets/img/` sont des **visuels provisoires** générés par script (lumière tungstène, mèches, cuir, réservoir), pas des photos du salon. Chaque `<img>` dans un `.ph` se remplace par la vraie photo, idéalement en `<picture>` AVIF et WebP avec un repli JPG, en gardant les attributs `width` et `height`. `og.jpg` sert à l'aperçu de partage. Le modèle est en commentaire au-dessus du hero. Les photos à prévoir :
 - hero : le salon, lumière chaude, horizontale
 - salon : intérieur (verticale, arche) + un détail cuir ou bois (carré)
-- Karine : sa moto (bandeau horizontal) + son portrait (vertical)
+- Karine : une photo d'ambiance (bandeau horizontal) + son portrait (vertical)
 - Elle / Lui : une photo coiffure femme + une photo barbier (verticales)
 - réalisations : 8 photos de coupes, réparties en femme, homme et barbe
 
