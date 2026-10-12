@@ -35,3 +35,8 @@ Chaque `.ph` (« Photo à venir ») se remplace par un `<picture>` en AVIF et We
 - **Domaine** : `mkconcept-douai.fr` est un nom provisoire (canonical, OG, JSON-LD).
 - **Image OG** : `assets/img/og.jpg` est à produire avec une vraie photo.
 - **Mentions légales** : forme juridique, SIRET, hébergeur.
+
+## Déploiement (Vercel)
+Projet statique, sans build : dans Vercel, importer le dépôt, laisser le Framework Preset sur « Other » et déployer. Chaque push redéploie automatiquement.
+
+`vercel.json` envoie un en-tête `X-Robots-Tag: noindex` tant que le site est en préversion, avec ses photos et tarifs provisoires. **Retirer ce bloc à la mise en ligne**, sinon Google n'indexera pas le site.
