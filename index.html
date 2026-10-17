@@ -25,9 +25,8 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Caprasimo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Familjen.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/img/scene-0.webp" imagesrcset="assets/img/scene-0-s.webp 800w, assets/img/scene-0.webp 1500w" imagesizes="(min-width: 960px) 58vw, 100vw" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="modulepreload" href="assets/js/main.js">
@@ -89,17 +88,20 @@
        NAVIGATION
        =================================================================== -->
   <header class="nav" id="nav">
-    <a class="nav__logo" href="#top" aria-label="MK Concept, retour en haut">
-      <span class="monogram" aria-hidden="true">M<i>K</i></span>
-      <span class="nav__word" aria-hidden="true">Concept</span>
+    <a class="sign" id="sign" href="#top" aria-label="MK Concept, retour en haut">
+      <span class="sign__chains" aria-hidden="true"><i></i><i></i></span>
+      <span class="sign__plate" aria-hidden="true">
+        <span class="sign__name">MK Concept</span>
+        <span class="sign__sub">Coiffure · Barbier</span>
+      </span>
     </a>
     <div class="nav__actions">
       <a class="menu-toggle" href="#menu" aria-controls="menu" aria-expanded="false">
         <span class="menu-toggle__bars" aria-hidden="true"></span>
         <span class="menu-toggle__label">Menu</span>
       </a>
-      <a class="btn btn--fill btn--sm" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">
-        Rendez-vous<span class="sr-only"> (Planity, nouvel onglet)</span>
+      <a class="nav__cta" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">
+        <span class="nav__dot" id="nav-dot" aria-hidden="true"></span>Rendez-vous<span class="sr-only"> (Planity, nouvel onglet)</span>
       </a>
     </div>
   </header>
@@ -141,7 +143,7 @@
       <div class="hero__top">
         <p class="kicker hero__kicker">Coiffure &amp; barbier · Douai</p>
         <h1 class="hero__title" id="hero-title">
-          <span class="line"><span>Installez-vous,</span></span>
+          <span class="line"><span style="white-space:nowrap">Installez-vous,</span></span>
           <span class="line"><span><em>on s'occupe du reste.</em></span></span>
           <span class="sr-only"> MK Concept, salon de coiffure et barbier à Douai.</span>
         </h1>
@@ -189,7 +191,7 @@
     <section class="salon section" id="salon" aria-labelledby="t-salon">
       <div class="wrap two">
         <div class="two__copy">
-          <p class="kicker"><span class="odo" data-odo="01">01</span> Le salon</p>
+          <p class="kicker">Le salon</p>
           <h2 class="h2" id="t-salon" data-reveal="lines">
             <span class="line"><span>On y est bien.</span></span>
             <span class="line"><span><em>On y revient.</em></span></span>
@@ -225,7 +227,7 @@
           </div>
         </figure>
         <div class="two__copy">
-          <p class="kicker"><span class="odo" data-odo="02">02</span> Karine</p>
+          <p class="kicker">Karine</p>
           <h2 class="sr-only" id="t-karine">Karine, gérante de MK Concept</h2>
           <blockquote class="quote" data-reveal="lines">
             <p>
@@ -248,7 +250,7 @@
          =================================================================== -->
     <section class="duo section" id="elle-lui" aria-labelledby="t-duo">
       <div class="wrap duo__head">
-        <p class="kicker"><span class="odo" data-odo="03">03</span> Elle &amp; lui</p>
+        <p class="kicker">Elle &amp; lui</p>
         <h2 class="h2" id="t-duo" data-reveal="lines">
           <span class="line"><span>Deux ambiances,</span></span>
           <span class="line"><span><em>une même maison.</em></span></span>
@@ -284,7 +286,7 @@
       <div class="wrap">
         <div class="carte__head">
           <div>
-            <p class="kicker"><span class="odo" data-odo="04">04</span> Les tarifs</p>
+            <p class="kicker">Les tarifs</p>
             <h2 class="h2" id="t-carte" data-reveal="lines">
               <span class="line"><span>Ce qu'on fait,</span></span>
               <span class="line"><span><em>et ce que ça coûte.</em></span></span>
@@ -350,7 +352,7 @@
     <section class="works section" id="realisations" aria-labelledby="t-works">
       <div class="wrap works__head">
         <div>
-          <p class="kicker"><span class="odo" data-odo="05">05</span> Réalisations</p>
+          <p class="kicker">Réalisations</p>
           <h2 class="h2" id="t-works" data-reveal="lines">
             <span class="line"><span>Sorti <em>du fauteuil.</em></span></span>
           </h2>
@@ -403,7 +405,7 @@
       <!-- Pour ajouter des citations : recopier 2 ou 3 avis Planity mot pour mot
            dans des <figure class="avis__item"> sous .avis__score. -->
       <div class="wrap">
-        <p class="kicker"><span class="odo" data-odo="06">06</span> Ce qu'on en dit</p>
+        <p class="kicker">Ce qu'on en dit</p>
         <h2 class="sr-only" id="t-avis">Avis clients</h2>
         <div class="avis__score">
           <p class="avis__note" aria-label="Note moyenne : 4,9 sur 5">4,9<span>/5</span></p>
@@ -490,7 +492,12 @@
         <a class="btn btn--line" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Rendez-vous<span class="sr-only"> (Planity, nouvel onglet)</span></a>
       </div>
     </div>
-    <p class="footer__mk" aria-hidden="true">M<i>K</i></p>
+    <div class="wrap"><div class="plaque" aria-hidden="true">
+      <span class="plaque__name">MK Concept</span>
+      <span class="plaque__sub">Coiffure mixte · Barbier</span>
+      <span class="plaque__addr">235 rue de Paris · Douai</span>
+      <span class="plaque__open" id="plaque-open"></span>
+    </div></div>
     <div class="wrap footer__legal">
       <p>© <span data-year>2026</span> MK Concept, Douai</p>
       <p><a href="mentions-legales.html">Mentions légales</a></p>

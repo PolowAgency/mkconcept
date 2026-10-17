@@ -50,6 +50,8 @@ function updateStatus() {
     el.textContent = s.line;
     el.dataset.open = s.open;
   }
+  const dot = $("#nav-dot"); if (dot) dot.dataset.open = s.open;
+  const po = $("#plaque-open"); if (po) { po.textContent = s.sign[0] + " · " + s.sign[1]; po.dataset.open = s.open; }
   $$(".hours tr").forEach((tr) => tr.classList.toggle("is-today", +tr.dataset.day === s.day));
   if (hero) hero.setSign(s.sign[0], s.sign[1]);
 }
@@ -654,6 +656,22 @@ function initNav(menu) {
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
   nav.addEventListener("focusin", () => nav.classList.remove("is-hidden"));
+
+  // L'enseigne est suspendue : elle se balance quand on défile ou qu'on la touche (ressort, pivot en haut)
+  const sign = $("#sign");
+  if (sign && !reduced) {
+    const sway = new Spring(0, { response: 0.9, damping: 0.18, precision: 0.01 });
+    sway.onUpdate = (v) => sign.style.setProperty("--rot", v.toFixed(2) + "deg");
+    let sy = window.scrollY, last = 0;
+    window.addEventListener("scroll", () => {
+      const now = performance.now(), dy = window.scrollY - sy; sy = window.scrollY;
+      if (now - last < 60 || Math.abs(dy) < 6) return;
+      last = now;
+      sway.to(0, { velocity: clamp(-dy * 0.9, -40, 40) });
+    }, { passive: true });
+    sign.addEventListener("pointerenter", () => sway.to(0, { velocity: 26 }));
+    sway.to(0, { velocity: 22 });
+  }
 
   const dock = $("#dock"), heroEl = $(".hero");
   if (dock && "IntersectionObserver" in window) {
