@@ -9,13 +9,13 @@ python3 -m http.server 8000   # puis http://localhost:8000
 ```
 
 ## L'idée
-Un site clair, dans l'esprit des pages d'apple.com : un titre, une phrase, de grandes photos, peu d'effets. Les vraies photos du salon portent le design. Les horaires et l'état Ouvert/Fermé sont calculés pour Douai.
+Noir et blanc éditorial, d'après la référence envoyée (Hudozhnikova Fashion Hair School) : une bande noire en haut, une photo plein cadre avec le nom au centre, des titres fins, un seul accent kaki. Les photos sont passées en noir et blanc par CSS (la couleur revient au survol des réalisations). Les horaires et l'état Ouvert/Fermé sont calculés pour Douai.
 
 ## Structure
 - `index.html` : contenu, SEO, Open Graph, Schema.org `HairSalon`
 - `assets/css/site.css` : variables en tête (couleurs, typo, largeur)
-- `assets/js/site.js` : horaires en direct, menu mobile, onglets des tarifs, apparition au défilement
-- `assets/fonts` : Inter (woff2, licence OFL)
+- `assets/js/site.js` : horaires en direct, menu mobile, onglets des tarifs, filtre des réalisations
+- `assets/fonts` : Jost (woff2, licence OFL)
 - `assets/img` : vraies photos (`photo-*.webp`), `og.jpg`, `favicon.svg`
 
 ## Fonctionnement dégradé

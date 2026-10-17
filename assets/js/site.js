@@ -62,11 +62,18 @@ tabs.forEach((t, i) => {
 });
 $$("[data-tab-target]").forEach((a) => a.addEventListener("click", () => selectTab(a.dataset.tabTarget)));
 
+/* Filtre des réalisations */
+const fbtns = $$("#works-tabs button");
+fbtns.forEach((b) => b.addEventListener("click", () => {
+  fbtns.forEach((x) => x.setAttribute("aria-checked", x === b));
+  $$("#works-grid li").forEach((li) => { li.hidden = b.dataset.filter !== "all" && li.dataset.cat !== b.dataset.filter; });
+}));
+
 /* Apparition douce au défilement */
 if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
   document.documentElement.classList.add("reveal");
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
-  $$(".hero__media, .tile, .band__in li, .works figure, .karine__in, .avis__note").forEach((n) => { n.classList.add("rv"); io.observe(n); });
+  $$(".about__row > *, .facts li, .works__grid li, .avis__note").forEach((n) => { n.classList.add("rv"); io.observe(n); });
 }
 
 $$("[data-year]").forEach((n) => (n.textContent = new Date().getFullYear()));
