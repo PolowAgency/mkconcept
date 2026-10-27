@@ -9,19 +9,15 @@ python3 -m http.server 8000   # puis http://localhost:8000
 ```
 
 ## L'idée
-Le hero est le salon en miniature : une scène isométrique qu'on fait tourner (quatre coins : barbier, coiffure, entrée, couleur), avec des meubles cliquables. L'enseigne « Ouvert » et l'horloge de la scène suivent l'heure réelle de Douai.
-
-Tout le mouvement suit les principes d'Apple pour les interfaces fluides : le geste est suivi 1:1, reprend la vitesse du doigt au lâcher, se projette vers l'endroit où il allait, se pose avec un ressort, et peut être attrapé à tout instant. Cela vaut pour la scène, le carrousel des réalisations, la visionneuse, le menu et le volet « Horaires et accès ». Pas de GSAP ni de Lenis : défilement natif, petit moteur de ressorts maison.
+Mise en page éditoriale d'après la référence Carré d'Hair (REZOO), en noir et or : photo plein cadre, titres Fraunces fins avec l'italique en or, bandeau italique, histoire de Karine, salon 3D à faire tourner, prestations sur fond crème, réalisations en bande horizontale, avis, contact. Les photos d'ambiance (héros et section « Ambiance ») sont libres de droit (Wikimedia Commons) et à remplacer par de vraies photos du salon ; les crédits sont dans `mentions-legales.html`.
 
 ## Structure
 - `index.html` : contenu, SEO, Open Graph, Schema.org `HairSalon`
-- `assets/css/main.css` : variables en tête (couleurs, typo, rythme, ressorts CSS)
-- `assets/js/physics.js` : ressorts, projection d'inertie, élastique
-- `assets/js/scene.js` : la scène 3D (meubles, lumières, murs qui s'abaissent)
-- `assets/js/hero.js` : chargement de la 3D, geste de rotation, pastilles
-- `assets/js/main.js` : intro, menu, volets, carrousel, visionneuse, tarifs, horaires
-- `assets/fonts` : Bricolage Grotesque et Outfit (woff2, licence OFL)
-- `assets/img` : affiches et illustrations de la scène (WebP), vraies photos (`photo-*.webp`)
+- `assets/css/site.css` : variables en tête (couleurs, typo)
+- `assets/js/site.js` : horaires en direct, menu, onglets, onglets segmentés, bande de réalisations
+- `assets/js/hero.js`, `scene.js`, `physics.js` : le salon 3D (chargé au premier geste)
+- `assets/fonts` : Fraunces et Work Sans (woff2, licence OFL)
+- `assets/img` : vraies photos (`photo-*.webp`), affiches de la scène, photos d'ambiance (`ambiance-*.webp`)
 
 ## Fonctionnement dégradé
 - Sans WebGL, en économie de données ou si la 3D échoue : l'affiche reste, et le contrôle sous la scène change de coin (une affiche par coin).
