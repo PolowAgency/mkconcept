@@ -20,7 +20,7 @@ Tout le mouvement suit les principes d'Apple pour les interfaces fluides : le ge
 - `assets/js/scene.js` : la scène 3D (meubles, lumières, murs qui s'abaissent)
 - `assets/js/hero.js` : chargement de la 3D, geste de rotation, pastilles
 - `assets/js/main.js` : intro, menu, volets, carrousel, visionneuse, tarifs, horaires
-- `assets/fonts` : Caprasimo, Familjen Grotesk et Covered By Your Grace (woff2, licence OFL)
+- `assets/fonts` : Bricolage Grotesque et Outfit (woff2, licence OFL)
 - `assets/img` : affiches et illustrations de la scène (WebP), vraies photos (`photo-*.webp`)
 
 ## Fonctionnement dégradé

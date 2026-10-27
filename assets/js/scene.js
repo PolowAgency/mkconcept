@@ -335,7 +335,7 @@ export function createSalon(THREE, canvas, opts = {}) {
     g.strokeStyle = "#c6a15b"; g.lineWidth = 4; g.strokeRect(8, 8, w - 16, h - 16);
     g.fillStyle = "#efe7d6"; g.textAlign = "center";
     g.font = "italic 52px 'Instrument Serif', Georgia, serif"; g.fillText(line1, w / 2, 62);
-    g.fillStyle = "#c6a15b"; g.font = "600 17px 'Hanken Grotesk', Arial, sans-serif";
+    g.fillStyle = "#c6a15b"; g.font = "600 17px 'Outfit', Arial, sans-serif";
     g.fillText((line2 || "").toUpperCase(), w / 2, 98);
     signTex.needsUpdate = true;
   }
