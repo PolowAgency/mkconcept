@@ -89,6 +89,8 @@ em { font-style: italic; }
 /* Hero : photo plein cadre, texte centré, barre d'infos */
 .hero { position: relative; display: grid; grid-template-rows: 1fr auto; min-height: min(calc(100svh - var(--nav-h)), 900px); overflow: hidden; background: #000; text-align: center; }
 .hero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: sepia(0.28) saturate(0.85) contrast(1.05) brightness(0.8); }
+.hero__video { opacity: 0; transition: opacity 0.8s ease; }
+.hero__video.is-on { opacity: 1; }
 .hero__veil { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(11, 10, 9, 0.55), rgba(11, 10, 9, 0.62) 60%, rgba(11, 10, 9, 0.9)); }
 .hero__in { position: relative; align-self: center; max-width: 920px; margin: 0 auto; padding: clamp(56px, 9vw, 110px) var(--gutter); }
 .hero__title { font-size: clamp(2.8rem, 1.2rem + 6.6vw, 6.4rem); }
@@ -105,6 +107,16 @@ em { font-style: italic; }
 .dot[data-open="true"] { background: #6fcf8c; }
 .dot[data-open="false"] { background: #e08c72; }
 @media (max-width: 640px) { .hero__bar { grid-template-columns: 1fr auto; } .hero__mouse { display: none; } .hero__hours { font-size: 0.6875rem; letter-spacing: 0.08em; } .hero__tel { font-size: 0.6875rem; letter-spacing: 0.08em; } }
+/* Grand écran : la vidéo est verticale, on la montre entière dans une arche, l'affiche floutée fait le fond */
+@media (min-width: 1000px) {
+  .hero { text-align: left; }
+  .hero > .hero__img:not(.hero__video) { filter: blur(26px) sepia(0.35) saturate(0.8) brightness(0.5); transform: scale(1.15); }
+  .hero__veil { background: linear-gradient(to right, rgba(11, 10, 9, 0.85) 30%, rgba(11, 10, 9, 0.35)); }
+  .hero__video { inset: auto; top: clamp(32px, 5vh, 56px); bottom: calc(clamp(32px, 5vh, 56px) + 62px); right: clamp(48px, 8vw, 150px); height: calc(100% - 2 * clamp(32px, 5vh, 56px) - 62px); width: auto; aspect-ratio: 9 / 16; border-radius: 999px 999px 22px 22px; border: 1px solid rgba(201, 162, 90, 0.45); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6); filter: sepia(0.15) contrast(1.04) brightness(0.95); z-index: 1; }
+  .hero__in { margin: 0; margin-left: clamp(48px, 8vw, 150px); max-width: min(640px, 52vw); padding-inline: 0; }
+  .hero__sub { margin-left: 0; }
+  .hero__ctas { justify-content: flex-start; }
+}
 
 /* Bandeau italique */
 .marquee { overflow: hidden; background: var(--c-black-2); border-bottom: 1px solid var(--c-faint); padding: 26px 0; }

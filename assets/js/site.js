@@ -7,6 +7,18 @@ const root = document.documentElement;
 root.classList.add("js");
 const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/* Héros : la visite du salon en vidéo, sauf mouvement réduit ou économie de données */
+{
+  const v = $(".hero__video");
+  const saveData = navigator.connection && navigator.connection.saveData;
+  if (v && !reduced && !saveData) {
+    v.src = v.dataset.src;
+    v.addEventListener("playing", () => v.classList.add("is-on"), { once: true });
+    v.play().catch(() => {});
+    new IntersectionObserver(([e]) => (e.isIntersecting ? v.play().catch(() => {}) : v.pause())).observe(v);
+  }
+}
+
 /* Horaires : calculés pour Douai, quel que soit le fuseau du visiteur */
 const HOURS = { 1: [14, 18], 2: [9.5, 19], 3: [9.5, 19], 4: [10, 20], 5: [9, 19], 6: [9, 18], 0: null };
 const DAYS = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];

@@ -9,7 +9,7 @@ python3 -m http.server 8000   # puis http://localhost:8000
 ```
 
 ## L'idée
-Mise en page éditoriale d'après la référence Carré d'Hair (REZOO), en noir et or : photo plein cadre, titres Fraunces fins avec l'italique en or, bandeau italique, histoire de Karine, salon 3D à faire tourner, prestations sur fond crème, réalisations en bande horizontale, avis, contact. Les photos d'ambiance (héros et section « Ambiance ») sont libres de droit (Wikimedia Commons) et à remplacer par de vraies photos du salon ; les crédits sont dans `mentions-legales.html`.
+Mise en page éditoriale d'après la référence Carré d'Hair (REZOO), en noir et or : photo plein cadre, titres Fraunces fins avec l'italique en or, bandeau italique, histoire de Karine, salon 3D à faire tourner, prestations sur fond crème, réalisations en bande horizontale, avis, contact. Le héros montre la visite du salon filmée par Karine (`assets/video/salon-hero.mp4`, muette, en boucle ; affiche `hero-salon.webp` si mouvement réduit ou économie de données ; sur grand écran, la vidéo verticale est cadrée dans une arche). Les photos de la section « Ambiance » sont libres de droit (Wikimedia Commons), crédits dans `mentions-legales.html`.
 
 ## Structure
 - `index.html` : contenu, SEO, Open Graph, Schema.org `HairSalon`

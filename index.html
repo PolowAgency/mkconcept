@@ -27,7 +27,7 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/Fraunces.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/WorkSans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/img/ambiance-2.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/hero-salon.webp" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/site.css">
   <link rel="modulepreload" href="assets/js/physics.js">
   <link rel="modulepreload" href="assets/js/hero.js">
@@ -94,9 +94,10 @@
   </header>
 
   <main id="contenu">
-    <!-- HERO : photo libre de droit (Wikimedia Commons), à remplacer par une photo du salon -->
+    <!-- HERO : visite du salon filmée par Karine (vidéo muette en boucle, affiche si mouvement réduit ou économie de données) -->
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <img class="hero__img" src="assets/img/ambiance-2.webp" width="1200" height="900" alt="Intérieur lumineux d'un salon de coiffure : miroirs, fauteuils et banque d'accueil en lattes de bois" fetchpriority="high" decoding="async">
+      <img class="hero__img" src="assets/img/hero-salon.webp" width="576" height="1024" alt="L'intérieur de MK Concept : banque d'accueil, mur végétal et postes de coiffure" fetchpriority="high" decoding="async">
+      <video class="hero__img hero__video" data-src="assets/video/salon-hero.mp4" poster="assets/img/hero-salon.webp" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
       <div class="hero__veil" aria-hidden="true"></div>
       <div class="hero__in">
         <p class="eyebrow">Salon de coiffure · Douai</p>
