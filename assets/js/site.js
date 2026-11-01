@@ -33,6 +33,8 @@ function updateStatus() {
   const s = openStatus();
   $("#status-line").textContent = s.line;
   $("#status-dot").dataset.open = s.open;
+  $("#dialog-status").textContent = s.line;
+  $("#dialog-dot").dataset.open = s.open;
   $$(".hours tr").forEach((tr) => tr.classList.toggle("is-today", +tr.dataset.day === s.day));
   if (hero) hero.setSign(s.sign[0], s.sign[1]);
 }
@@ -45,6 +47,26 @@ const setMenu = (open) => { nav.classList.toggle("is-open", open); toggle.setAtt
 toggle.addEventListener("click", () => setMenu(!nav.classList.contains("is-open")));
 $$("#nav-links a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
 addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+
+/* Fenêtre des horaires */
+const dlg = $("#hours");
+const openHours = () => { setMenu(false); if (!dlg.open) dlg.showModal(); };
+$$("[data-open-hours]").forEach((b) => b.addEventListener("click", openHours));
+$$("[data-close-hours]").forEach((b) => b.addEventListener("click", () => dlg.close()));
+dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+
+/* Vidéo de présentation : si le fichier existe, elle remplace la photo */
+const vid = $("#hero-video");
+if (vid) {
+  const src = "assets/video/presentation.mp4";
+  fetch(src, { method: "HEAD" }).then((r) => {
+    if (!r.ok || !/video/.test(r.headers.get("content-type") || "")) return;
+    vid.src = src; vid.hidden = false; vid.preload = "auto";
+    vid.addEventListener("playing", () => $("#hero-media img").setAttribute("hidden", ""), { once: true });
+    if (!reduced) vid.play().catch(() => { vid.hidden = true; });
+    else { vid.controls = true; }
+  }).catch(() => {});
+}
 
 /* Contrôle segmenté : la pastille glisse sous le bouton actif */
 function initSeg(el) {
@@ -71,8 +93,8 @@ function initSeg(el) {
   place();
   return api;
 }
-const segs = $$("[data-seg]").map(initSeg);
-const viewsSeg = segs[0], carteSeg = segs[1];
+const carteSeg = initSeg($("#carte-seg"));
+const viewsSeg = initSeg($("#views [data-seg]"));
 
 /* Onglets des tarifs */
 const names = ["femme", "homme", "barbier"];
@@ -86,24 +108,8 @@ const go = (id) => $(id).scrollIntoView({ behavior: reduced ? "auto" : "smooth",
 hero = initHero({
   stage: $("#stage"), poster: $("#stage-poster"), canvas: $("#stage-canvas"), spots: $("#stage-spots"), seg: viewsSeg,
   getSign: () => openStatus().sign,
-  onAction: (a) => { if (a.startsWith("tab:")) { showTab(a.slice(4)); go("#prestations"); } else go("#contact"); },
+  onAction: (a) => { if (a.startsWith("tab:")) { showTab(a.slice(4)); go("#prestations"); } else openHours(); },
 });
 updateStatus();
 
-/* Défilement à la souris sur la bande de réalisations */
-const track = $("#works-track");
-if (track) {
-  let down = null;
-  track.addEventListener("pointerdown", (e) => { if (e.pointerType === "mouse") down = { x: e.clientX, s: track.scrollLeft, m: false }; });
-  addEventListener("pointermove", (e) => { if (!down) return; const dx = e.clientX - down.x; if (Math.abs(dx) > 4) { down.m = true; track.style.scrollSnapType = "none"; } if (down.m) track.scrollLeft = down.s - dx; });
-  addEventListener("pointerup", () => { if (down) track.style.scrollSnapType = ""; down = null; });
-  track.addEventListener("dragstart", (e) => e.preventDefault());
-}
-
-/* Apparition douce */
-if (!reduced && "IntersectionObserver" in window) {
-  root.classList.add("reveal");
-  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
-  $$("[data-reveal]").forEach((n) => io.observe(n));
-}
 $$("[data-year]").forEach((n) => (n.textContent = new Date().getFullYear()));

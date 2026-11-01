@@ -9,15 +9,17 @@ python3 -m http.server 8000   # puis http://localhost:8000
 ```
 
 ## L'idée
-Mise en page éditoriale d'après la référence Carré d'Hair (REZOO), en noir et or : photo plein cadre, titres Fraunces fins avec l'italique en or, bandeau italique, histoire de Karine, salon 3D à faire tourner, prestations sur fond crème, réalisations en bande horizontale, avis, contact. Les photos d'ambiance (héros et section « Ambiance ») sont libres de droit (Wikimedia Commons) et à remplacer par de vraies photos du salon ; les crédits sont dans `mentions-legales.html`.
+Un site simple, comme un salon de quartier : une page, du texte direct, les tarifs tout de suite, les vraies photos, et les horaires dans une fenêtre qui s'ouvre depuis le menu. Noir et or, une seule police (Archivo). Le salon 3D reste en section « Le salon ».
+
+**Vidéo de présentation** : déposer le fichier `assets/video/presentation.mp4` (format vertical ou 4:5, moins de 8 Mo conseillé). Elle remplace automatiquement la photo du héros ; sans fichier, la photo s'affiche.
 
 ## Structure
 - `index.html` : contenu, SEO, Open Graph, Schema.org `HairSalon`
-- `assets/css/site.css` : variables en tête (couleurs, typo)
-- `assets/js/site.js` : horaires en direct, menu, onglets, onglets segmentés, bande de réalisations
+- `assets/css/site.css` : variables en tête
+- `assets/js/site.js` : horaires en direct, fenêtre des horaires, menu, onglets, vidéo
 - `assets/js/hero.js`, `scene.js`, `physics.js` : le salon 3D (chargé au premier geste)
-- `assets/fonts` : Fraunces et Work Sans (woff2, licence OFL)
-- `assets/img` : vraies photos (`photo-*.webp`), affiches de la scène, photos d'ambiance (`ambiance-*.webp`)
+- `assets/fonts` : Archivo (woff2, licence OFL)
+- `assets/img` : vraies photos (`photo-*.webp`), affiches de la scène
 
 ## Fonctionnement dégradé
 - Sans WebGL, en économie de données ou si la 3D échoue : l'affiche reste, et le contrôle sous la scène change de coin (une affiche par coin).
