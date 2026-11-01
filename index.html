@@ -74,16 +74,17 @@
 
   <header class="nav" id="nav">
     <div class="nav__in">
-      <a class="logo" href="#top">MK Concept</a>
+      <a class="logo" href="#top"><span>MK</span> Concept</a>
       <nav class="nav__links" id="nav-links" aria-label="Menu principal">
         <a href="#prestations">Tarifs</a>
         <a href="#salon">Le salon</a>
         <a href="#realisations">Réalisations</a>
         <a href="#karine">Karine</a>
-        <button type="button" class="nav__hours" data-open-hours>Horaires</button>
+        <button type="button" class="nav__hours nav__hours--m" data-open-hours>Horaires</button>
       </nav>
       <div class="nav__right">
-        <a class="btn btn--gold btn--sm" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Rendez-vous<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
+        <button type="button" class="nav__hours nav__hours--d" data-open-hours>Horaires</button>
+        <a class="btn btn--gold btn--sm" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Prendre RDV<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
         <button class="nav__toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Menu"><span></span><span></span></button>
       </div>
     </div>
@@ -92,7 +93,7 @@
   <main id="contenu">
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="hero__copy">
-        <h1 class="hero__title" id="hero-title">Coiffeur et barbier à Douai</h1>
+        <h1 class="hero__title" id="hero-title">Coiffeur et <span class="hl">barbier</span> à Douai</h1>
         <p class="hero__sub">Femmes et hommes. Coupe, couleur, balayage, barbe, rasage, coiffure de mariée. 235 rue de Paris.</p>
         <div class="hero__ctas">
           <a class="btn btn--gold" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Prendre rendez-vous<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
@@ -102,6 +103,18 @@
       </div>
       <div class="hero__media" id="hero-media">
         <video id="hero-video" src="assets/video/salon-hero.mp4" poster="assets/img/hero-salon.webp" width="576" height="1024" muted loop playsinline preload="none" aria-label="Visite du salon en vidéo : la vitrine, l'accueil, les bacs, le coin barbier"></video>
+      </div>
+    </section>
+
+    <section class="statement" aria-label="Présentation">
+      <p class="statement__text">Salon de coiffure <span class="hl">mixte</span> et <span class="hl">barbier</span> au centre de Douai. Karine et son équipe coiffent les femmes, les hommes, les barbes, et les <span class="hl">mariées</span>, au salon ou à domicile.</p>
+    </section>
+
+    <section class="cats" aria-label="Prestations">
+      <div class="cats__grid">
+        <a class="cat" href="#prestations" data-tab-target="femme"><img src="assets/img/photo-chignon.webp" width="840" height="1120" alt="" loading="lazy" decoding="async"><span class="cat__title">Coiffure<br>femme</span><span class="cat__more" aria-hidden="true">Voir<br>+</span></a>
+        <a class="cat" href="#prestations" data-tab-target="homme"><img src="assets/img/photo-degrade.webp" width="1200" height="900" alt="" loading="lazy" decoding="async"><span class="cat__title">Coiffure<br>homme</span><span class="cat__more" aria-hidden="true">Voir<br>+</span></a>
+        <a class="cat" href="#prestations" data-tab-target="barbier"><img src="assets/img/salon-barbier.webp" width="576" height="1024" alt="" loading="lazy" decoding="async"><span class="cat__title">Barbier</span><span class="cat__more" aria-hidden="true">Voir<br>+</span></a>
       </div>
     </section>
 
@@ -148,13 +161,17 @@
     </section>
 
     <section class="karine" id="karine" aria-labelledby="t-karine">
-      <div class="wrap karine__in">
-        <h2 class="h2" id="t-karine">Karine</h2>
-        <div>
+      <div class="wrap">
+        <div class="karine__card">
+          <h2 class="h2" id="t-karine">Karine</h2>
           <!-- Texte à valider avec Karine. -->
-          <p>Karine dirige MK Concept. Elle coiffe les mariées, au salon ou chez elles, et prend le temps d'écouter avant de couper.</p>
-          <p class="karine__avis"><strong>4,9/5</strong> sur près de 400 avis Planity. <a class="link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Lire les avis<span class="sr-only"> (nouvel onglet)</span></a></p>
+          <p class="karine__lead">Karine dirige MK Concept. Elle coiffe les mariées, au salon ou chez elles, et prend le temps d'écouter avant de couper.</p>
+          <p><strong>4,9/5</strong> sur près de 400 avis Planity.</p>
+          <p class="karine__btns"><a class="btn btn--dark" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Prendre rendez-vous<span class="sr-only"> sur Planity (nouvel onglet)</span></a> <a class="btn btn--dark-line" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Lire les avis<span class="sr-only"> (nouvel onglet)</span></a></p>
         </div>
+        <ul class="strip" aria-label="En bref">
+          <li>Réservation en ligne sur Planity</li><li>Mariée au salon ou à domicile</li><li>Rasage à l'ancienne</li><li>Ouvert 6 jours sur 7</li>
+        </ul>
       </div>
     </section>
   </main>

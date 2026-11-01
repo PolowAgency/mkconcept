@@ -91,6 +91,7 @@ const carteSeg = initSeg($("#carte-seg"));
 
 /* Onglets des tarifs */
 const names = ["femme", "homme", "barbier"];
+$$("[data-tab-target]").forEach((a) => a.addEventListener("click", () => showTab(a.dataset.tabTarget)));
 carteSeg.onChange = (i) => {
   names.forEach((n, k) => { $("#p-" + n).hidden = k !== i; });
 };
