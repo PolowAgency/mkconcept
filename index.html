@@ -28,8 +28,6 @@
   <link rel="preload" href="assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" href="assets/img/photo-coupe.webp" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/site.css">
-  <link rel="modulepreload" href="assets/js/physics.js">
-  <link rel="modulepreload" href="assets/js/hero.js">
 
   <!-- SEO local : à garder synchronisé avec le bloc Contact -->
   <script type="application/ld+json">
@@ -80,7 +78,6 @@
       <nav class="nav__links" id="nav-links" aria-label="Menu principal">
         <a href="#prestations">Tarifs</a>
         <a href="#realisations">Réalisations</a>
-        <a href="#salon">Le salon</a>
         <a href="#karine">Karine</a>
         <button type="button" class="nav__hours" data-open-hours>Horaires</button>
       </nav>
@@ -135,33 +132,6 @@
           <li><img src="assets/img/photo-degrade.webp" width="1200" height="900" alt="Dégradé court vu de profil" loading="lazy" decoding="async"></li>
         </ul>
         <p><a class="link" href="https://www.instagram.com/mkconceptdouai/" target="_blank" rel="noopener">Plus de photos sur Instagram, @mkconceptdouai<span class="sr-only"> (nouvel onglet)</span></a></p>
-      </div>
-    </section>
-
-    <section class="salon" id="salon" aria-labelledby="t-salon">
-      <div class="wrap">
-        <h2 class="h2" id="t-salon">Le salon</h2>
-        <p class="note">Une visite en miniature : faites glisser pour tourner, touchez un meuble pour voir les prix.</p>
-      </div>
-      <div class="stage" id="stage" role="group" aria-roledescription="scène interactive" aria-label="Le salon en miniature. Faites glisser pour le faire tourner." tabindex="0">
-        <img class="stage__poster" id="stage-poster" src="assets/img/scene-0.webp" srcset="assets/img/scene-0-s.webp 800w, assets/img/scene-0.webp 1500w" sizes="(min-width: 960px) 900px, 100vw" width="1500" height="1250" alt="Illustration du salon vu de dessus : un coin barbier avec un mur de briques, un coin coiffure, deux bacs à shampoing et l'entrée." loading="lazy" decoding="async" draggable="false">
-        <canvas class="stage__canvas" id="stage-canvas" aria-hidden="true"></canvas>
-        <div class="stage__spots" id="stage-spots">
-          <button class="spot" type="button" data-view="0" data-action="tab:barbier"><span>Le barbier</span><i>Voir les tarifs</i></button>
-          <button class="spot" type="button" data-view="1" data-action="tab:femme"><span>La coiffure</span><i>Voir les tarifs</i></button>
-          <button class="spot" type="button" data-view="2" data-action="hours"><span>L'entrée</span><i>Horaires et accès</i></button>
-          <button class="spot" type="button" data-view="3" data-action="tab:femme"><span>La couleur</span><i>Voir les tarifs</i></button>
-        </div>
-        <p class="stage__hint" id="stage-hint"><span class="stage__arrows" aria-hidden="true">←&nbsp;→</span> illustration</p>
-      </div>
-      <div class="views" id="views" role="radiogroup" aria-label="Coin du salon">
-        <div class="seg seg--views" data-seg>
-          <span class="seg__thumb" aria-hidden="true"></span>
-          <button type="button" role="radio" aria-checked="true">Barbier</button>
-          <button type="button" role="radio" aria-checked="false">Coiffure</button>
-          <button type="button" role="radio" aria-checked="false">Entrée</button>
-          <button type="button" role="radio" aria-checked="false">Couleur</button>
-        </div>
       </div>
     </section>
 

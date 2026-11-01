@@ -9,7 +9,7 @@ python3 -m http.server 8000   # puis http://localhost:8000
 ```
 
 ## L'idée
-Un site simple, comme un salon de quartier : une page, du texte direct, les tarifs tout de suite, les vraies photos, et les horaires dans une fenêtre qui s'ouvre depuis le menu. Noir et or, une seule police (Archivo). Le salon 3D reste en section « Le salon ».
+Un site simple, comme un salon de quartier : une page, du texte direct, les tarifs tout de suite, les vraies photos, et les horaires dans une fenêtre qui s'ouvre depuis le menu. Noir et or, une seule police (Archivo).
 
 **Vidéo de présentation** : déposer le fichier `assets/video/presentation.mp4` (format vertical ou 4:5, moins de 8 Mo conseillé). Elle remplace automatiquement la photo du héros ; sans fichier, la photo s'affiche.
 
@@ -17,9 +17,8 @@ Un site simple, comme un salon de quartier : une page, du texte direct, les tari
 - `index.html` : contenu, SEO, Open Graph, Schema.org `HairSalon`
 - `assets/css/site.css` : variables en tête
 - `assets/js/site.js` : horaires en direct, fenêtre des horaires, menu, onglets, vidéo
-- `assets/js/hero.js`, `scene.js`, `physics.js` : le salon 3D (chargé au premier geste)
 - `assets/fonts` : Archivo (woff2, licence OFL)
-- `assets/img` : vraies photos (`photo-*.webp`), affiches de la scène
+- `assets/img` : vraies photos (`photo-*.webp`)
 
 ## Fonctionnement dégradé
 - Sans WebGL, en économie de données ou si la 3D échoue : l'affiche reste, et le contrôle sous la scène change de coin (une affiche par coin).

@@ -1,5 +1,4 @@
 /* MK Concept : horaires en direct, menu, onglets, salon 3D. Aucune bibliothèque d'animation. */
-import { initHero } from "./hero.js";
 
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
@@ -28,7 +27,6 @@ function openStatus() {
   }
   return { open: false, day, line: "Fermé", sign: ["Fermé", ""] };
 }
-let hero = null;
 function updateStatus() {
   const s = openStatus();
   $("#status-line").textContent = s.line;
@@ -36,7 +34,6 @@ function updateStatus() {
   $("#dialog-status").textContent = s.line;
   $("#dialog-dot").dataset.open = s.open;
   $$(".hours tr").forEach((tr) => tr.classList.toggle("is-today", +tr.dataset.day === s.day));
-  if (hero) hero.setSign(s.sign[0], s.sign[1]);
 }
 updateStatus();
 setInterval(updateStatus, 60000);
@@ -94,7 +91,6 @@ function initSeg(el) {
   return api;
 }
 const carteSeg = initSeg($("#carte-seg"));
-const viewsSeg = initSeg($("#views [data-seg]"));
 
 /* Onglets des tarifs */
 const names = ["femme", "homme", "barbier"];
@@ -102,14 +98,5 @@ carteSeg.onChange = (i) => {
   names.forEach((n, k) => { $("#p-" + n).hidden = k !== i; });
 };
 function showTab(name) { const i = names.indexOf(name); if (i >= 0) { carteSeg.select(i); } }
-
-/* Salon 3D (se charge au premier geste) */
-const go = (id) => $(id).scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
-hero = initHero({
-  stage: $("#stage"), poster: $("#stage-poster"), canvas: $("#stage-canvas"), spots: $("#stage-spots"), seg: viewsSeg,
-  getSign: () => openStatus().sign,
-  onAction: (a) => { if (a.startsWith("tab:")) { showTab(a.slice(4)); go("#prestations"); } else openHours(); },
-});
-updateStatus();
 
 $$("[data-year]").forEach((n) => (n.textContent = new Date().getFullYear()));
