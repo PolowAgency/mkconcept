@@ -26,7 +26,7 @@
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/Archivo.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/img/photo-coupe.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/hero-salon.webp" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/site.css">
 
   <!-- SEO local : à garder synchronisé avec le bloc Contact -->
@@ -77,6 +77,7 @@
       <a class="logo" href="#top">MK Concept</a>
       <nav class="nav__links" id="nav-links" aria-label="Menu principal">
         <a href="#prestations">Tarifs</a>
+        <a href="#salon">Le salon</a>
         <a href="#realisations">Réalisations</a>
         <a href="#karine">Karine</a>
         <button type="button" class="nav__hours" data-open-hours>Horaires</button>
@@ -99,10 +100,8 @@
         </div>
         <p class="hero__status"><span class="dot" id="status-dot"></span><span id="status-line" aria-live="polite"></span> <button type="button" class="link" data-open-hours>Voir les horaires</button></p>
       </div>
-      <!-- Vidéo de présentation : déposer le fichier dans assets/video/presentation.mp4 (vertical ou 4:5). Sans fichier, la photo s'affiche. -->
       <div class="hero__media" id="hero-media">
-        <img src="assets/img/photo-coupe.webp" width="840" height="1120" alt="Coupe courte vue de profil, dans un fauteuil de barbier ancien devant un mur de briques" fetchpriority="high" decoding="async">
-        <video id="hero-video" muted loop playsinline preload="none" poster="assets/img/photo-coupe.webp" aria-label="Vidéo de présentation de MK Concept" hidden></video>
+        <video id="hero-video" src="assets/video/salon-hero.mp4" poster="assets/img/hero-salon.webp" width="576" height="1024" muted loop playsinline preload="none" aria-label="Visite du salon en vidéo : la vitrine, l'accueil, les bacs, le coin barbier"></video>
       </div>
     </section>
 
@@ -119,6 +118,19 @@
         <div class="svcs" id="p-femme" role="tabpanel" aria-labelledby="tab-femme"><ul><li class="svc"><div><h4 class="svc__name">Coupe &amp; coiffage</h4><p class="svc__meta">Shampoing compris · 45 à 55 min selon la longueur</p></div><span class="svc__price">41 à 53&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : coupe et coiffage femme (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h4 class="svc__name">Frange</h4><p class="svc__meta">Entre deux coupes</p></div><span class="svc__price">5&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : frange (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h4 class="svc__name">Coloration</h4><p class="svc__meta">Shampoing et coiffage · 1 h 35</p></div><span class="svc__price">dès 55&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : coloration (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h4 class="svc__name">Coloration &amp; coupe</h4><p class="svc__meta">Shampoing, coupe et coiffage · 1 h 30</p></div><span class="svc__price">dès 76&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : coloration et coupe (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h4 class="svc__name">Balayage &amp; brushing</h4><p class="svc__meta">Balayage surface · 1 h 30</p></div><span class="svc__price">dès 58&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : balayage et brushing (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h4 class="svc__name">Balayage &amp; coupe</h4><p class="svc__meta">Shampoing, coupe et coiffage</p></div><span class="svc__price">dès 79&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : balayage et coupe (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h4 class="svc__name">Ombré, balayage ou mèches Olaplex</h4><p class="svc__meta">Soin Olaplex inclus · 2 h à 2 h 15</p></div><span class="svc__price">dès 69&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : ombré, balayage ou mèches Olaplex (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h4 class="svc__name">Balayage à l'argile</h4><p class="svc__meta">Coloration végétale · 1 h 10 à 1 h 20</p></div><span class="svc__price">60 à 70&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : balayage à l'argile (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h4 class="svc__name">Mariée, au salon ou à domicile</h4><p class="svc__meta">Avec Karine</p></div><span class="svc__price">sur devis</span><a class="svc__link" href="tel:+33327080781"><span class="sr-only">Appeler le salon pour un devis mariée</span></a></li></ul></div>
         <div class="svcs" id="p-homme" role="tabpanel" aria-labelledby="tab-homme" hidden><ul><li class="svc"><div><h4 class="svc__name">Coupe &amp; coiffage</h4><p class="svc__meta">Shampoing compris · 20 min</p></div><span class="svc__price">25&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : coupe et coiffage homme (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h4 class="svc__name">Coupe étudiant</h4><p class="svc__meta">16 à 25 ans · 20 min</p></div><span class="svc__price">20&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : coupe étudiant (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h4 class="svc__name">Shampoing &amp; coiffage</h4><p class="svc__meta">15 min</p></div><span class="svc__price">12&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : shampoing et coiffage (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h4 class="svc__name">Mèches homme</h4><p class="svc__meta">30 min</p></div><span class="svc__price">20 à 60&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : mèches homme (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h4 class="svc__name">Formules abonné</h4><p class="svc__meta">Au salon uniquement, pas en ligne</p></div><span class="svc__price">dès 15&nbsp;€</span><a class="svc__link" href="tel:+33327080781"><span class="sr-only">Appeler le salon pour une formule abonné</span></a></li></ul></div>
         <div class="svcs" id="p-barbier" role="tabpanel" aria-labelledby="tab-barbier" hidden><ul><li class="svc"><div><h4 class="svc__name">Taille de barbe</h4></div><span class="svc__price">sur Planity</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : taille de barbe (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h4 class="svc__name">Rasage à l'ancienne</h4><p class="svc__meta">Au rasoir</p></div><span class="svc__price">sur Planity</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : rasage à l'ancienne (Planity, nouvel onglet)</span></a></li></ul></div>
+      </div>
+    </section>
+
+    <section class="visit" id="salon" aria-labelledby="t-salon">
+      <div class="wrap">
+        <h2 class="h2" id="t-salon">Le salon</h2>
+        <p class="note">Briques, verrière et fauteuils d'autrefois, au 235 rue de Paris.</p>
+        <ul class="visit__grid">
+          <li><img src="assets/img/salon-accueil.webp" width="576" height="1024" alt="L'accueil et les postes de coiffure, dans la partie claire du salon" loading="lazy" decoding="async"><span>Accueil</span></li>
+          <li><img src="assets/img/salon-coiffure.webp" width="576" height="1024" alt="Les bacs à shampoing sous la verrière" loading="lazy" decoding="async"><span>Coiffure</span></li>
+          <li><img src="assets/img/salon-coin.webp" width="576" height="1024" alt="Le coin salon avec canapé bleu et commode turquoise, devant un mur à motif" loading="lazy" decoding="async"><span>Le coin détente</span></li>
+          <li><img src="assets/img/salon-barbier.webp" width="576" height="1024" alt="Le coin barbier : fauteuil ancien en cuir devant un mur de briques" loading="lazy" decoding="async"><span>Barbier</span></li>
+        </ul>
       </div>
     </section>
 

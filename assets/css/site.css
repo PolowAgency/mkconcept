@@ -75,14 +75,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hero__sub { max-width: 30em; margin-top: 20px; font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem); }
 .hero__ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .hero__status { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 22px; font-size: 0.9375rem; }
-.hero__media { position: relative; overflow: hidden; border-radius: 16px; background: var(--c-black-2); aspect-ratio: 4 / 5; }
+.hero__media { position: relative; overflow: hidden; border-radius: 16px; background: var(--c-black-2); aspect-ratio: 9 / 16; width: min(100%, 340px); justify-self: center; }
 .hero__media img, .hero__media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .dot { flex: none; width: 8px; height: 8px; border-radius: 50%; background: #999; }
 .dot[data-open="true"] { background: #6fcf8c; }
 .dot[data-open="false"] { background: #e08c72; }
 
 /* Sections : sobres, alignées à gauche */
-.carte, .works, .karine { padding: clamp(48px, 8vw, 96px) 0 0; }
+.carte, .visit, .works, .karine { padding: clamp(48px, 8vw, 96px) 0 0; }
 .karine { padding-bottom: clamp(56px, 9vw, 110px); }
 
 /* Tarifs */
@@ -140,3 +140,9 @@ html:not(.js) .seg button[aria-selected="true"] { background: var(--c-gold); }
 .hours tr.is-today th, .hours tr.is-today td { color: var(--c-gold-l); font-weight: 600; }
 .hours-dialog__addr { margin-top: 16px; font-size: 0.9375rem; }
 .hours-dialog__btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+
+.visit__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 24px; }
+@media (min-width: 760px) { .visit__grid { grid-template-columns: repeat(4, 1fr); gap: 12px; } }
+.visit__grid li { position: relative; overflow: hidden; border-radius: 10px; background: var(--c-black-2); aspect-ratio: 9 / 14; }
+.visit__grid img { width: 100%; height: 100%; object-fit: cover; }
+.visit__grid span { position: absolute; left: 10px; bottom: 10px; padding: 4px 10px; border-radius: 6px; background: rgba(11, 10, 9, 0.75); color: var(--c-cream); font-size: 0.8125rem; font-weight: 600; }

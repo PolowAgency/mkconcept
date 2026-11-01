@@ -52,17 +52,14 @@ $$("[data-open-hours]").forEach((b) => b.addEventListener("click", openHours));
 $$("[data-close-hours]").forEach((b) => b.addEventListener("click", () => dlg.close()));
 dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
 
-/* Vidéo de présentation : si le fichier existe, elle remplace la photo */
+/* Vidéo de présentation : lecture automatique (sans son) une fois la page chargée */
 const vid = $("#hero-video");
 if (vid) {
-  const src = "assets/video/presentation.mp4";
-  fetch(src, { method: "HEAD" }).then((r) => {
-    if (!r.ok || !/video/.test(r.headers.get("content-type") || "")) return;
-    vid.src = src; vid.hidden = false; vid.preload = "auto";
-    vid.addEventListener("playing", () => $("#hero-media img").setAttribute("hidden", ""), { once: true });
-    if (!reduced) vid.play().catch(() => { vid.hidden = true; });
-    else { vid.controls = true; }
-  }).catch(() => {});
+  if (reduced) { vid.controls = true; }
+  else {
+    const start = () => { vid.preload = "auto"; vid.play().catch(() => { vid.controls = true; }); };
+    if (document.readyState === "complete") start(); else addEventListener("load", start, { once: true });
+  }
 }
 
 /* Contrôle segmenté : la pastille glisse sous le bouton actif */

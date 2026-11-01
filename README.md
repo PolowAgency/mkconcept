@@ -11,7 +11,7 @@ python3 -m http.server 8000   # puis http://localhost:8000
 ## L'idée
 Un site simple, comme un salon de quartier : une page, du texte direct, les tarifs tout de suite, les vraies photos, et les horaires dans une fenêtre qui s'ouvre depuis le menu. Noir et or, une seule police (Archivo).
 
-**Vidéo de présentation** : déposer le fichier `assets/video/presentation.mp4` (format vertical ou 4:5, moins de 8 Mo conseillé). Elle remplace automatiquement la photo du héros ; sans fichier, la photo s'affiche.
+**Vidéo du héros** : `assets/video/salon-hero.mp4` (visite filmée du salon, vertical), lecture automatique sans son. Les photos de la section « Le salon » sont des images extraites de cette vidéo (basse définition : à remplacer par de vraies photos si possible).
 
 ## Structure
 - `index.html` : contenu, SEO, Open Graph, Schema.org `HairSalon`
