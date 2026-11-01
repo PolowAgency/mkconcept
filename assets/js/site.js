@@ -97,4 +97,15 @@ carteSeg.onChange = (i) => {
 };
 function showTab(name) { const i = names.indexOf(name); if (i >= 0) { carteSeg.select(i); } }
 
+/* Barre mobile : visible une fois le héros passé */
+const dock = $("#dock"), heroEl = $("#top");
+if (dock && "IntersectionObserver" in window) new IntersectionObserver(([en]) => dock.classList.toggle("is-on", !en.isIntersecting), { threshold: 0.1 }).observe(heroEl);
+
+/* Apparition douce */
+if (!reduced && "IntersectionObserver" in window) {
+  root.classList.add("reveal");
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -6% 0px" });
+  $$(".cat, .visit__grid li, .works__grid li, .statement__text, .karine__card, .strip").forEach((n) => { n.classList.add("rv"); io.observe(n); });
+}
+
 $$("[data-year]").forEach((n) => (n.textContent = new Date().getFullYear()));

@@ -9,7 +9,7 @@ python3 -m http.server 8000   # puis http://localhost:8000
 ```
 
 ## L'idée
-Un site simple, comme un salon de quartier : une page, du texte direct, les tarifs tout de suite, les vraies photos, et les horaires dans une fenêtre qui s'ouvre depuis le menu. Noir et or, une seule police (Archivo).
+Un site simple, comme un salon de quartier : une page, du texte direct, les tarifs tout de suite, les vraies photos, et les horaires dans une fenêtre qui s'ouvre depuis le menu. Noir et or, titres en Bodoni Moda, texte en Jost.
 
 **Vidéo du héros** : `assets/video/salon-hero.mp4` (visite filmée du salon, vertical), lecture automatique sans son. Les photos de la section « Le salon » sont des images extraites de cette vidéo (basse définition : à remplacer par de vraies photos si possible).
 
@@ -17,7 +17,7 @@ Un site simple, comme un salon de quartier : une page, du texte direct, les tari
 - `index.html` : contenu, SEO, Open Graph, Schema.org `HairSalon`
 - `assets/css/site.css` : variables en tête
 - `assets/js/site.js` : horaires en direct, fenêtre des horaires, menu, onglets, vidéo
-- `assets/fonts` : Archivo (woff2, licence OFL)
+- `assets/fonts` : Bodoni Moda et Jost (woff2, licence OFL)
 - `assets/img` : vraies photos (`photo-*.webp`)
 
 ## Fonctionnement dégradé

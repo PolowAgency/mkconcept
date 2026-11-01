@@ -1,5 +1,6 @@
 /* MK Concept : noir et or, simple. Archivo seule, pas d'effet décoratif. */
-@font-face { font-family: "Archivo"; src: url("../fonts/Archivo.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-style: normal; font-display: swap; }
+@font-face { font-family: "Bodoni Moda"; src: url("../fonts/BodoniModa.woff2") format("woff2"); font-weight: 400 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Jost"; src: url("../fonts/Jost.woff2") format("woff2"); font-weight: 300 600; font-style: normal; font-display: swap; }
 
 :root {
   --c-black: #0b0a09;
@@ -10,7 +11,8 @@
   --c-faint: rgba(237, 230, 216, 0.14);
   --c-gold: #c6a15b;
   --c-gold-l: #dcc08a;
-  --f: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f: "Jost", "Century Gothic", "Avenir Next", sans-serif;
+  --f-display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
   --f-sans: var(--f);
   --fs-small: 0.8125rem;
   --nav-h: 64px;
@@ -233,3 +235,53 @@ html:not(.js) .seg button[aria-selected="true"] { background: var(--c-gold); }
 .nav::before { content: ""; position: absolute; inset: 0 0 -24px; z-index: -1; background: linear-gradient(rgba(11, 10, 9, 0.55), transparent); pointer-events: none; }
 @media (min-width: 880px) { .hero { grid-template-columns: 1fr; gap: 0; } }
 .hero__media { justify-self: stretch; align-self: stretch; width: 100%; height: 100%; }
+
+/* ===== v3 : une police de coiffure (Bodoni Moda, Jost), photos du salon, barre mobile ===== */
+body { font-weight: 400; font-size: 1.0625rem; }
+.logo, .h2, .hero__title, .statement__text, .cat__title, .karine__lead, .footer__name, .hours-dialog h2 { font-family: var(--f-display); font-optical-sizing: auto; }
+.logo { font-weight: 700; font-size: 1.5rem; letter-spacing: -0.01em; }
+.logo span { font-weight: 800; }
+.h2 { font-weight: 700; letter-spacing: -0.015em; line-height: 1.05; }
+.hero__title { font-weight: 800; letter-spacing: -0.02em; line-height: 0.95; font-size: clamp(3.4rem, 1.5rem + 9vw, 8.5rem); }
+.hero__tag { font-size: clamp(0.8125rem, 0.75rem + 0.4vw, 1rem); font-weight: 500; letter-spacing: 0.32em; text-transform: uppercase; padding-left: 0.32em; }
+.statement__text { font-weight: 600; letter-spacing: -0.015em; line-height: 1.14; }
+.cat__title { font-weight: 700; letter-spacing: -0.01em; }
+.karine__lead { font-weight: 600; letter-spacing: -0.01em; }
+.btn, .nav__links, .nav__hours--d, .seg button { font-family: var(--f); }
+.btn { font-weight: 500; letter-spacing: 0.04em; }
+.svc__name { font-weight: 500; font-size: 1.125rem; }
+.svc__price { font-weight: 500; }
+.hours-dialog h2 { font-weight: 700; }
+.footer__name { font-weight: 700; font-size: 1.375rem; }
+.cat__more { font-family: var(--f); font-weight: 600; letter-spacing: 0.06em; }
+.visit__grid span { font-family: var(--f); font-weight: 500; letter-spacing: 0.04em; }
+
+/* Indication de défilement dans le héros */
+.hero__scroll { position: absolute; left: 50%; bottom: 22px; width: 28px; height: 46px; margin-left: -14px; border: 1.5px solid rgba(237, 230, 216, 0.55); border-radius: 16px; display: grid; place-items: start center; padding-top: 9px; }
+.hero__scroll span { width: 3px; height: 8px; border-radius: 2px; background: var(--c-cream); animation: wheel 1.8s ease-in-out infinite; }
+@keyframes wheel { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(14px); opacity: 0; } 100% { opacity: 0; } }
+@media (max-width: 700px), (max-height: 640px) { .hero__scroll { display: none; } }
+
+/* Section Le salon : huit cases */
+.visit__grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+@media (min-width: 760px) { .visit__grid { grid-template-columns: repeat(4, 1fr); gap: 14px; } }
+.visit__grid li { aspect-ratio: 9 / 14; }
+.visit__card { display: grid; align-items: end; padding: 20px; background: var(--c-gold) !important; color: #120d05; }
+.visit__addr { font-family: var(--f-display); font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem); font-weight: 700; line-height: 1.15; color: #120d05; }
+.visit__btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.visit__card .btn--gold { background: #120d05; color: var(--c-cream); }
+.visit__card .btn--line { border-color: rgba(18, 13, 5, 0.5); color: #120d05; }
+
+/* Barre mobile : appeler / rendez-vous */
+.dock { position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; display: none; gap: 8px; padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom)); background: rgba(11, 10, 9, 0.94); border-top: 1px solid var(--c-faint); transform: translateY(110%); transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); }
+.dock .btn { flex: 1; }
+@media (max-width: 760px) { .dock { display: flex; } .dock.is-on { transform: none; } .footer { padding-bottom: calc(90px + env(safe-area-inset-bottom)); } }
+
+/* Apparition douce, une fois */
+.reveal .rv { opacity: 0; transform: translateY(22px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+.reveal .rv.is-in { opacity: 1; transform: none; }
+/* Bodoni : une taille optique plus robuste pour les titres moyens (les traits fins restent lisibles) */
+.h2, .statement__text, .logo, .cat__title, .karine__lead, .footer__name, .visit__addr, .hours-dialog h2 { font-optical-sizing: none; font-variation-settings: "opsz" 11; }
+.h2 { font-weight: 700; }
+.statement__text { font-weight: 600; }
+.hero__title { font-variation-settings: "opsz" 40; }
