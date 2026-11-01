@@ -93,7 +93,7 @@ const carteSeg = initSeg($("#carte-seg"));
 const names = ["femme", "homme", "barbier"];
 $$("[data-tab-target]").forEach((a) => a.addEventListener("click", () => showTab(a.dataset.tabTarget)));
 carteSeg.onChange = (i) => {
-  names.forEach((n, k) => { $("#p-" + n).hidden = k !== i; });
+  names.forEach((n, k) => { const p = $("#p-" + n); p.hidden = k !== i; if (k === i) { p.classList.remove("swap"); void p.offsetWidth; p.classList.add("swap"); } });
 };
 function showTab(name) { const i = names.indexOf(name); if (i >= 0) { carteSeg.select(i); } }
 
@@ -129,6 +129,27 @@ if (lead && !reduced) {
   update();
 }
 
+/* Entrée du héros : le titre monte lettre par lettre */
+const ht = $(".hero__title");
+if (ht && !reduced) {
+  const txt = ht.textContent; ht.setAttribute("aria-label", txt); ht.textContent = "";
+  [...txt].forEach((ch, i) => {
+    const s = document.createElement("span"); s.className = "ch"; s.setAttribute("aria-hidden", "true");
+    s.style.setProperty("--i", i); s.textContent = ch === " " ? "\u00a0" : ch; ht.appendChild(s);
+  });
+  requestAnimationFrame(() => document.body.classList.add("is-loaded"));
+} else document.body.classList.add("is-loaded");
+
+/* Titres de section : un masque qui se lève */
+if (!reduced) $$(".h2").forEach((n) => n.classList.add("t-rise"));
+
+/* Défilement : la vidéo du héros glisse plus lentement que la page */
+const heroMedia = $("#hero-media");
+if (heroMedia && !reduced) {
+  let ticking2 = false;
+  addEventListener("scroll", () => { if (ticking2) return; ticking2 = true; requestAnimationFrame(() => { ticking2 = false; const y = Math.min(scrollY, innerHeight); heroMedia.style.transform = `translate3d(0, ${y * 0.25}px, 0) scale(${1 + y / innerHeight * 0.06})`; }); }, { passive: true });
+}
+
 /* Barre mobile : visible une fois le héros passé */
 const dock = $("#dock"), heroEl = $("#top");
 if (dock && "IntersectionObserver" in window) new IntersectionObserver(([en]) => dock.classList.toggle("is-on", !en.isIntersecting), { threshold: 0.1 }).observe(heroEl);
@@ -137,7 +158,11 @@ if (dock && "IntersectionObserver" in window) new IntersectionObserver(([en]) =>
 if (!reduced && "IntersectionObserver" in window) {
   root.classList.add("reveal");
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -6% 0px" });
-  $$(".cat, .visit__grid li, .bgtext__cards li, .works__grid li, .team__list li").forEach((n) => { n.classList.add("rv"); io.observe(n); });
+  $$(".cat, .works__grid li, .team__grid li, .avis__crit li, .t-rise, .avis__note, .avis__count, .avis__btns, .team__cta, .carte__cta, .footer__cols > div, .svc").forEach((n) => {
+    const sib = [...n.parentElement.children].filter((c) => c.matches(".cat, li, div"));
+    n.style.setProperty("--d", Math.min(sib.indexOf(n), 6) * 90 + "ms");
+    n.classList.add("rv"); io.observe(n);
+  });
 }
 
 $$("[data-year]").forEach((n) => (n.textContent = new Date().getFullYear()));
