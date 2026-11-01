@@ -55,9 +55,9 @@ dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
 /* Vidéo de présentation : lecture automatique (sans son) une fois la page chargée */
 const vid = $("#hero-video");
 if (vid) {
-  if (reduced) { vid.controls = true; }
+  if (reduced) { /* mouvement réduit : on garde l'image fixe */ }
   else {
-    const start = () => { vid.preload = "auto"; vid.play().catch(() => { vid.controls = true; }); };
+    const start = () => { vid.preload = "auto"; vid.play().catch(() => {}); };
     if (document.readyState === "complete") start(); else addEventListener("load", start, { once: true });
   }
 }
