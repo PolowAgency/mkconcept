@@ -97,6 +97,38 @@ carteSeg.onChange = (i) => {
 };
 function showTab(name) { const i = names.indexOf(name); if (i >= 0) { carteSeg.select(i); } }
 
+/* Texte d'ouverture : les mots s'allument au fil du défilement */
+const lead = $(".statement__text");
+if (lead && !reduced) {
+  const words = [];
+  const wrap = (node) => {
+    [...node.childNodes].forEach((n) => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach((t) => {
+          if (!t) return;
+          if (/^\s+$/.test(t)) { frag.appendChild(document.createTextNode(t)); return; }
+          const s = document.createElement("span"); s.className = "w"; s.textContent = t; frag.appendChild(s); words.push(s);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) wrap(n);
+    });
+  };
+  wrap(lead);
+  lead.classList.add("is-read");
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const r = lead.getBoundingClientRect(), vh = innerHeight;
+    const p = Math.min(1, Math.max(0, (vh * 0.8 - r.top) / (r.height + vh * 0.25)));
+    const on = Math.round(p * words.length);
+    words.forEach((w, i) => w.classList.toggle("on", i < on));
+  };
+  addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  addEventListener("resize", update);
+  update();
+}
+
 /* Barre mobile : visible une fois le héros passé */
 const dock = $("#dock"), heroEl = $("#top");
 if (dock && "IntersectionObserver" in window) new IntersectionObserver(([en]) => dock.classList.toggle("is-on", !en.isIntersecting), { threshold: 0.1 }).observe(heroEl);
@@ -105,7 +137,7 @@ if (dock && "IntersectionObserver" in window) new IntersectionObserver(([en]) =>
 if (!reduced && "IntersectionObserver" in window) {
   root.classList.add("reveal");
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -6% 0px" });
-  $$(".cat, .visit__grid li, .works__grid li, .statement__text, .karine__card, .strip").forEach((n) => { n.classList.add("rv"); io.observe(n); });
+  $$(".cat, .visit__grid li, .bgtext__cards li, .works__grid li, .team__list li").forEach((n) => { n.classList.add("rv"); io.observe(n); });
 }
 
 $$("[data-year]").forEach((n) => (n.textContent = new Date().getFullYear()));
