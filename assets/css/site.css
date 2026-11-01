@@ -534,3 +534,17 @@ h1, h2, .h2, .h3, .team__name, .footer__h, .footer__logo, .hours-dialog h2 { tex
 .ft-up { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--c-faint); font-size: 1.1rem; text-decoration: none !important; transition: background-color 0.25s, color 0.25s; }
 .ft-up:hover { background: var(--c-gold); color: #120d05 !important; }
 @media (max-width: 760px) { .ft-legal { justify-content: center; text-align: center; } .footer { padding-bottom: calc(96px + env(safe-area-inset-bottom)); } }
+
+/* Air sous les titres de section */
+.h2 { margin-bottom: 0; padding-bottom: 0.08em; }
+.h2 + * { margin-top: clamp(18px, 2.4vw, 28px); }
+.h2 + .note, .h2 + .team__intro { margin-top: clamp(16px, 2vw, 22px); }
+.carte .seg { margin-top: clamp(28px, 4vw, 44px); }
+.avis__note { margin-top: clamp(24px, 4vw, 44px); }
+.works__grid { margin-top: clamp(32px, 5vw, 56px); }
+.team__grid { margin-top: clamp(36px, 5vw, 60px); }
+.avis__crit { margin-top: clamp(32px, 4vw, 48px); }
+.avis__count { margin-top: 14px; }
+.h2 { line-height: 1.12; }
+.h2 + .note, .h2 + .team__intro { margin-top: clamp(26px, 3vw, 36px); }
+.carte .note { margin-bottom: 0; }
