@@ -132,10 +132,10 @@ if (lead && !reduced) {
 /* Entrée du héros : le titre monte lettre par lettre */
 const ht = $(".hero__title");
 if (ht && !reduced) {
-  const txt = ht.textContent; ht.setAttribute("aria-label", txt); ht.textContent = "";
+  const txt = ht.firstChild.textContent; const extra = ht.querySelector(".sr-only"); ht.textContent = ""; if (extra) ht.appendChild(extra);
   [...txt].forEach((ch, i) => {
     const s = document.createElement("span"); s.className = "ch"; s.setAttribute("aria-hidden", "true");
-    s.style.setProperty("--i", i); s.textContent = ch === " " ? "\u00a0" : ch; ht.appendChild(s);
+    s.style.setProperty("--i", i); s.textContent = ch === " " ? "\u00a0" : ch; ht.insertBefore(s, extra || null);
   });
   requestAnimationFrame(() => document.body.classList.add("is-loaded"));
 } else document.body.classList.add("is-loaded");

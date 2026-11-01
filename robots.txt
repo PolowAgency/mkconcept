@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# À activer au lancement, avec le vrai nom de domaine :
+# Sitemap: https://www.mkconcept-douai.fr/sitemap.xml

@@ -48,3 +48,14 @@ Les affiches et illustrations viennent de la scène 3D elle-même (rendus hors l
 Projet statique, sans build : importer le dépôt, Framework Preset « Other », déployer. Chaque push redéploie.
 
 `vercel.json` envoie un en-tête `X-Robots-Tag: noindex` tant que le site est en préversion. **Retirer ce bloc à la mise en ligne**, sinon Google n'indexera pas le site.
+
+## Référencement (SEO local)
+Fait dans le code : titre et description avec « coiffeur barbier Douai », Schema.org `HairSalon` (adresse, horaires, téléphone, note Planity 4,9 sur 405 avis), titre de page lisible par les moteurs, `robots.txt`, `sitemap.xml`, Lighthouse SEO 100.
+
+À faire par le salon (c'est ce qui fait vraiment monter à Douai) :
+1. **Fiche Google Business Profile** : à compléter à fond (catégorie « Salon de coiffure », horaires, photos, lien vers le site, réponses aux avis). Pour une recherche « coiffeur Douai », la fiche pèse plus que le site.
+2. **Nom de domaine** : brancher le vrai domaine sur Vercel, puis remplacer `https://www.mkconcept-douai.fr/` (canonical, og:url, JSON-LD, sitemap) par l'adresse réelle.
+3. **Retirer `noindex`** dans `vercel.json` (bloc `X-Robots-Tag`) le jour du lancement, et décommenter la ligne `Sitemap:` de `robots.txt`.
+4. Déclarer le site dans Google Search Console et envoyer le sitemap.
+5. Même nom, adresse et téléphone partout (Google, Planity, Facebook, Instagram, PagesJaunes). Deux numéros circulent : 03 27 08 07 81 et 06 28 50 60 98, à unifier.
+6. Obtenir des avis Google récents et y répondre.
