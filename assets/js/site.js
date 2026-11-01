@@ -158,7 +158,7 @@ if (dock && "IntersectionObserver" in window) new IntersectionObserver(([en]) =>
 if (!reduced && "IntersectionObserver" in window) {
   root.classList.add("reveal");
   const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -6% 0px" });
-  $$(".cat, .works__grid li, .team__grid li, .avis__crit li, .t-rise, .avis__note, .avis__count, .avis__btns, .team__cta, .carte__cta, .footer__cols > div, .svc").forEach((n) => {
+  $$(".cat, .works__grid li, .team__grid li, .avis__crit li, .t-rise, .avis__note, .avis__count, .avis__btns, .team__cta, .carte__cta, .ft-cols > div, .ft-top > *, .svc").forEach((n) => {
     const sib = [...n.parentElement.children].filter((c) => c.matches(".cat, li, div"));
     n.style.setProperty("--d", Math.min(sib.indexOf(n), 6) * 90 + "ms");
     n.classList.add("rv"); io.observe(n);
