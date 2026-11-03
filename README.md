@@ -9,16 +9,18 @@ python3 -m http.server 8000   # puis http://localhost:8000
 ```
 
 ## L'idée
-Un site simple, comme un salon de quartier : une page, du texte direct, les tarifs tout de suite, les vraies photos, et les horaires dans une fenêtre qui s'ouvre depuis le menu. Noir et or, titres en Bodoni Moda, texte en Jost.
-
-**Vidéo du héros** : `assets/video/salon-hero.mp4` (visite filmée du salon, vertical), lecture automatique sans son. Les photos de la section « Le salon » sont des images extraites de cette vidéo (basse définition : à remplacer par de vraies photos si possible).
+Même construction et mêmes mouvements que le site Botésens (refonte POLOW), en noir et or : intro avec rideau, nom géant lettre par lettre, trio d'arches avec la vidéo du salon, bandeau doré, texte qui s'allume au défilement, façade qui s'ouvre, prénoms de l'équipe qui se rejoignent, réalisations qui défilent à l'horizontale, boutons magnétiques, défilement doux (Lenis, MIT). Titres en Marcellus, texte en Montserrat.
 
 ## Structure
 - `index.html` : contenu, SEO, Open Graph, Schema.org `HairSalon`
-- `assets/css/site.css` : variables en tête
-- `assets/js/site.js` : horaires en direct, fenêtre des horaires, menu, onglets, vidéo
-- `assets/fonts` : Bodoni Moda et Jost (woff2, licence OFL)
-- `assets/img` : vraies photos (`photo-*.webp`)
+- `assets/css/site.css` : variables en tête (couleurs, polices)
+- `assets/js/site.js` : horaires en direct, scènes au défilement, menu, onglets des tarifs, fenêtre des horaires
+- `assets/js/lenis.min.js` : défilement doux
+- `assets/fonts` : Marcellus et Montserrat (woff2, licence OFL)
+- `assets/img` : vraies photos (`photo-*.webp`), images tirées de la vidéo (`salon-*.webp`), `hero-salon.webp` (affiche de la vidéo)
+- `assets/video/salon-hero.mp4` : visite du salon (vertical, lecture automatique sans son)
+
+Mouvement réduit : tout est affiché sans animation. Sans JavaScript : la page reste lisible.
 
 ## Fonctionnement dégradé
 - Sans WebGL, en économie de données ou si la 3D échoue : l'affiche reste, et le contrôle sous la scène change de coin (une affiche par coin).

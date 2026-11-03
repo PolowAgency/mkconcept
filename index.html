@@ -25,9 +25,9 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/Bricolage.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/DMSans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/img/hero-salon.webp" fetchpriority="high">
+  <link rel="preload" href="assets/fonts/Marcellus.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/Montserrat.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/img/hero-salon.webp">
   <link rel="stylesheet" href="assets/css/site.css">
 
   <!-- SEO local : à garder synchronisé avec le bloc Contact -->
@@ -72,189 +72,177 @@
   </script>
 </head>
 <body>
+  <script>document.documentElement.classList.add('js')</script>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
 
+  <div id="intro" aria-hidden="true"><div><span class="intro__name">MK Concept</span><span class="intro__sub">Coiffeur &amp; barbier · Douai</span><b></b></div></div>
+  <div class="jauge" id="jauge" aria-hidden="true"></div>
+
   <header class="nav" id="nav">
-    <div class="nav__in">
-      <a class="logo" href="#top"><span>MK</span> Concept</a>
-      <nav class="nav__links" id="nav-links" aria-label="Menu principal">
+    <div class="wrap nav__in">
+      <a class="logo" href="#top"><span class="logo__mk">MK</span><span class="logo__txt">Concept<small>Coiffeur &amp; barbier</small></span></a>
+      <nav class="menu" id="menu" aria-label="Menu principal">
         <a href="#prestations">Tarifs</a>
         <a href="#realisations">Réalisations</a>
-        <a href="#avis">Avis</a>
         <a href="#equipe">L'équipe</a>
-        <button type="button" class="nav__hours nav__hours--m" data-open-hours>Horaires</button>
+        <a href="#avis">Avis</a>
+        <button type="button" class="menu__btn" data-open-hours>Horaires</button>
+        <a class="btn b1 res-m" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Réserver<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
       </nav>
-      <div class="nav__right">
-        <button type="button" class="nav__hours nav__hours--d" data-open-hours>Horaires</button>
-        <a class="btn btn--gold btn--sm" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Prendre RDV<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
-        <button class="nav__toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Menu"><span></span><span></span></button>
-      </div>
+      <a class="btn b1 res-d" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Réserver<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
+      <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><b></b><b></b></button>
     </div>
   </header>
 
   <main id="contenu">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero__media" id="hero-media" aria-hidden="true">
-        <video id="hero-video" src="assets/video/salon-hero.mp4" poster="assets/img/hero-salon.webp" width="720" height="1280" muted loop playsinline preload="none" tabindex="-1"></video>
-      </div>
-      <div class="hero__veil" aria-hidden="true"></div>
-      <div class="hero__copy">
-        <h1 class="hero__title" id="hero-title">MK Concept<span class="sr-only"> : coiffeur et barbier à Douai</span></h1>
-        <a class="hero__rating hero__in" href="#avis"><span class="hero__stars" aria-hidden="true">★★★★★</span><strong>4,9/5</strong><span>405 avis clients</span></a>
-        <p class="hero__tag hero__in">Coiffeur et barbier à Douai</p>
-        <div class="hero__ctas hero__in">
-          <a class="btn btn--gold" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Prendre rendez-vous<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
-          <a class="btn btn--line" href="tel:+33327080781">03 27 08 07 81</a>
+      <div class="wrap">
+        <span class="sur rv">Coiffeur et barbier à Douai</span>
+        <h1 id="hero-title" class="hero__title" aria-label="MK Concept">MK Concept</h1>
+        <p class="lead rv">Femmes, hommes, barbes. Installez-vous, on s'occupe du reste.</p>
+        <div class="btns rv"><a class="btn b1" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Prendre rendez-vous <i>→</i><span class="sr-only"> sur Planity (nouvel onglet)</span></a><a class="btn b2" href="#prestations">Voir les tarifs</a></div>
+        <div class="tri">
+          <div class="arche rv" data-p="-.07" style="--d:.1s"><img src="assets/img/salon-vitrine.webp" width="576" height="1024" alt="La vitrine du salon, rue de Paris : « La coiffure et la barbe »" decoding="async"></div>
+          <div class="arche arche--v rv"><img src="assets/img/hero-salon.webp" width="720" height="1280" alt="" decoding="async" id="hero-poster"><video id="hero-video" src="assets/video/salon-hero.mp4" poster="assets/img/hero-salon.webp" width="720" height="1280" muted loop playsinline preload="none" tabindex="-1" aria-label="Visite du salon en vidéo"></video></div>
+          <div class="arche rv" data-p="-.12" style="--d:.2s"><img src="assets/img/salon-barbier.webp" width="576" height="1024" alt="Le coin barbier : fauteuil en cuir devant un mur de briques" decoding="async"></div>
+          <a class="pastille rv" href="#avis" style="--d:.7s"><b>4,9</b><small>405 avis clients</small></a>
         </div>
-        <p class="hero__status hero__in"><span class="dot" id="status-dot"></span><span id="status-line" aria-live="polite"></span> <button type="button" class="link" data-open-hours>Voir les horaires</button></p>
       </div>
-      <a class="hero__scroll" href="#prestations" aria-label="Voir la suite"><span></span></a>
     </section>
 
-    <section class="statement" aria-label="Présentation">
-      <p class="statement__text">Salon de coiffure <span class="hl">mixte</span> et <span class="hl">barbier</span> au centre de Douai. Karine et son équipe coiffent les femmes et les hommes, taillent les barbes et préparent les <span class="hl">mariées</span>, au salon ou à domicile.</p>
+    <div class="defile" aria-hidden="true"><div id="defile"></div></div>
+
+    <section class="lu-s" aria-label="Présentation">
+      <p class="lu" id="lu">Chez MK Concept, on prend le temps d'écouter avant de couper. Karine et son équipe coiffent les femmes et les hommes, taillent les barbes et préparent les mariées, au salon ou à domicile.</p>
     </section>
 
-    <section class="cats" aria-label="Prestations">
-      <div class="cats__grid">
-        <a class="cat" href="#prestations" data-tab-target="femme"><img src="assets/img/photo-chignon.webp" width="840" height="1120" alt="" loading="lazy" decoding="async"><span class="cat__title">Coiffure<br>femme</span><span class="cat__more" aria-hidden="true">Voir<br>+</span></a>
-        <a class="cat" href="#prestations" data-tab-target="homme"><img src="assets/img/photo-degrade.webp" width="1200" height="900" alt="" loading="lazy" decoding="async"><span class="cat__title">Coiffure<br>homme</span><span class="cat__more" aria-hidden="true">Voir<br>+</span></a>
-        <a class="cat" href="#prestations" data-tab-target="barbier"><img src="assets/img/salon-barbier.webp" width="576" height="1024" alt="" loading="lazy" decoding="async"><span class="cat__title">Barbier</span><span class="cat__more" aria-hidden="true">Voir<br>+</span></a>
+    <div class="ouvre" id="ouvre">
+      <div class="st">
+        <div class="img"><img src="assets/img/salon-vitrine.webp" width="576" height="1024" alt="" loading="lazy" decoding="async"></div>
+        <p class="leg">235 rue de Paris, Douai</p>
+      </div>
+    </div>
+
+    <section class="gamme-s" aria-labelledby="t-gamme">
+      <div class="wrap">
+        <div class="tete"><span class="sur rv">Prestations</span><h2 class="h2 tt" id="t-gamme">Pour elle, pour lui</h2></div>
+        <div class="gamme">
+          <a class="g" href="#prestations" data-tab="femme"><img src="assets/img/photo-chignon.webp" width="840" height="1120" alt="" loading="lazy" decoding="async"><b>Coiffure femme</b></a>
+          <a class="g" href="#prestations" data-tab="homme"><img src="assets/img/photo-degrade.webp" width="1200" height="900" alt="" loading="lazy" decoding="async"><b>Coiffure homme</b></a>
+          <a class="g" href="#prestations" data-tab="barbier"><img src="assets/img/salon-barbier.webp" width="576" height="1024" alt="" loading="lazy" decoding="async"><b>Barbier</b></a>
+          <a class="g" href="#prestations" data-tab="femme"><img src="assets/img/photo-mariage.webp" width="1144" height="858" alt="" loading="lazy" decoding="async"><b>Mariée</b></a>
+        </div>
       </div>
     </section>
 
     <section class="carte" id="prestations" aria-labelledby="t-carte">
-      <div class="wrap">
-        <h2 class="h2" id="t-carte">Tarifs</h2>
-        <p class="note">Tarifs relevés sur Planity. Le prix exact s'affiche à la réservation, selon la longueur.</p>
-        <div class="seg" data-seg id="carte-seg" role="tablist" aria-label="Catégories de prestations">
-          <span class="seg__thumb" aria-hidden="true"></span>
-          <button type="button" role="tab" id="tab-femme" aria-controls="p-femme" aria-selected="true">Femme</button>
-          <button type="button" role="tab" id="tab-homme" aria-controls="p-homme" aria-selected="false" tabindex="-1">Homme</button>
-          <button type="button" role="tab" id="tab-barbier" aria-controls="p-barbier" aria-selected="false" tabindex="-1">Barbier</button>
+      <div class="wrap etroit">
+        <div class="tete"><span class="sur rv">Tarifs</span><h2 class="h2 tt" id="t-carte">Ce que ça coûte</h2><p class="lead rv">Tarifs relevés sur Planity. Le prix exact s'affiche à la réservation, selon la longueur.</p></div>
+        <div class="puces" id="carte-seg" role="tablist" aria-label="Catégories de prestations">
+          <span class="ind" id="ind" aria-hidden="true"></span>
+          <button type="button" class="puce" role="tab" id="tab-femme" aria-controls="p-femme" aria-selected="true">Femme</button>
+          <button type="button" class="puce" role="tab" id="tab-homme" aria-controls="p-homme" aria-selected="false" tabindex="-1">Homme</button>
+          <button type="button" class="puce" role="tab" id="tab-barbier" aria-controls="p-barbier" aria-selected="false" tabindex="-1">Barbier</button>
         </div>
         <div class="svcs" id="p-femme" role="tabpanel" aria-labelledby="tab-femme"><ul><li class="svc"><div><h3 class="svc__name">Coupe &amp; coiffage</h3><p class="svc__meta">Shampoing compris · 45 à 55 min selon la longueur</p></div><span class="svc__price">41 à 53&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : coupe et coiffage femme (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Frange</h3><p class="svc__meta">Entre deux coupes</p></div><span class="svc__price">5&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : frange (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Coloration</h3><p class="svc__meta">Shampoing et coiffage · 1 h 35</p></div><span class="svc__price">dès 55&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : coloration (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Coloration &amp; coupe</h3><p class="svc__meta">Shampoing, coupe et coiffage · 1 h 30</p></div><span class="svc__price">dès 76&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : coloration et coupe (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Balayage &amp; brushing</h3><p class="svc__meta">Balayage surface · 1 h 30</p></div><span class="svc__price">dès 58&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : balayage et brushing (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Balayage &amp; coupe</h3><p class="svc__meta">Shampoing, coupe et coiffage</p></div><span class="svc__price">dès 79&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : balayage et coupe (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Ombré, balayage ou mèches Olaplex</h3><p class="svc__meta">Soin Olaplex inclus · 2 h à 2 h 15</p></div><span class="svc__price">dès 69&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : ombré, balayage ou mèches Olaplex (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Balayage à l'argile</h3><p class="svc__meta">Coloration végétale · 1 h 10 à 1 h 20</p></div><span class="svc__price">60 à 70&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : balayage à l'argile (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Mariée, au salon ou à domicile</h3><p class="svc__meta">Avec Karine</p></div><span class="svc__price">sur devis</span><a class="svc__link" href="tel:+33327080781"><span class="sr-only">Appeler le salon pour un devis mariée</span></a></li></ul></div>
         <div class="svcs" id="p-homme" role="tabpanel" aria-labelledby="tab-homme" hidden><ul><li class="svc"><div><h3 class="svc__name">Coupe &amp; coiffage</h3><p class="svc__meta">Shampoing compris · 20 min</p></div><span class="svc__price">25&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : coupe et coiffage homme (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Coupe étudiant</h3><p class="svc__meta">16 à 25 ans · 20 min</p></div><span class="svc__price">20&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : coupe étudiant (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Shampoing &amp; coiffage</h3><p class="svc__meta">15 min</p></div><span class="svc__price">12&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : shampoing et coiffage (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Mèches homme</h3><p class="svc__meta">30 min</p></div><span class="svc__price">20 à 60&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : mèches homme (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Formules abonné</h3><p class="svc__meta">Au salon uniquement, pas en ligne</p></div><span class="svc__price">dès 15&nbsp;€</span><a class="svc__link" href="tel:+33327080781"><span class="sr-only">Appeler le salon pour une formule abonné</span></a></li></ul></div>
         <div class="svcs" id="p-barbier" role="tabpanel" aria-labelledby="tab-barbier" hidden><ul><li class="svc"><div><h3 class="svc__name">Taille de barbe</h3></div><span class="svc__price">sur Planity</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : taille de barbe (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Rasage à l'ancienne</h3><p class="svc__meta">Au rasoir</p></div><span class="svc__price">sur Planity</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : rasage à l'ancienne (Planity, nouvel onglet)</span></a></li></ul></div>
-      <p class="carte__cta"><a class="btn btn--gold" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Réserver une prestation<span class="sr-only"> sur Planity (nouvel onglet)</span></a></p>
+        <p class="btns carte__cta"><a class="btn b1" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Réserver une prestation <i>→</i><span class="sr-only"> sur Planity (nouvel onglet)</span></a></p>
       </div>
     </section>
 
-    <section class="team" id="equipe" aria-labelledby="t-team">
+    <section class="noms-s" id="equipe" aria-labelledby="t-eq">
+      <div class="tete"><span class="sur rv">L'équipe</span><h2 class="sr-only" id="t-eq">L'équipe de MK Concept</h2></div>
+      <div class="noms" id="noms" aria-hidden="true"><div id="n1">Karine</div><em>&amp;</em><div id="n2">Perrine</div><em>&amp;</em><div id="n3">Ludovic</div></div>
       <div class="wrap">
-        <h2 class="h2" id="t-team">L'équipe</h2>
-        <!-- Phrase à valider avec Karine -->
-        <p class="team__intro">MK Concept, c'est le salon de Karine, au 235 rue de Paris à Douai. Elle prend le temps d'écouter avant de couper, et elle coiffe aussi les mariées, au salon ou chez elles.</p>
-        <ul class="team__grid">
-          <!-- Photos : remplacer <div class="team__ph">…</div> par <img class="team__img" src="assets/img/equipe-prenom.webp" alt="Prénom, fonction"> -->
-          <li><div class="team__ph" aria-hidden="true"><span>K</span><em>Photo à venir</em></div><h3 class="team__name">Karine</h3><p class="team__role">Gérante</p></li>
-          <li><div class="team__ph" aria-hidden="true"><span>P</span><em>Photo à venir</em></div><h3 class="team__name">Perrine</h3></li>
-          <li><div class="team__ph" aria-hidden="true"><span>L</span><em>Photo à venir</em></div><h3 class="team__name">Ludovic</h3></li>
+        <ul class="equipe">
+          <!-- Photos : remplacer le bloc .ph-vide par <img src="assets/img/equipe-prenom.webp" alt="Prénom, fonction"> -->
+          <li class="rv"><div class="arche ph-vide"><span aria-hidden="true">K</span><em>Photo à venir</em></div><h3>Karine</h3><p>Gérante</p></li>
+          <li class="rv" style="--d:.1s"><div class="arche ph-vide"><span aria-hidden="true">P</span><em>Photo à venir</em></div><h3>Perrine</h3></li>
+          <li class="rv" style="--d:.2s"><div class="arche ph-vide"><span aria-hidden="true">L</span><em>Photo à venir</em></div><h3>Ludovic</h3></li>
         </ul>
-        <p class="team__cta"><a class="btn btn--gold" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Prendre rendez-vous<span class="sr-only"> sur Planity (nouvel onglet)</span></a> <a class="btn btn--line" href="https://www.instagram.com/mkconceptdouai/" target="_blank" rel="noopener">Voir le salon sur Instagram<span class="sr-only"> (nouvel onglet)</span></a></p>
+        <p class="lead rv equipe__mot">MK Concept, c'est le salon de Karine, au 235 rue de Paris à Douai. Elle prend le temps d'écouter avant de couper, et elle coiffe aussi les mariées, au salon ou chez elles.</p>
       </div>
     </section>
 
     <section class="avis" id="avis" aria-labelledby="t-avis">
       <div class="wrap">
-        <h2 class="h2" id="t-avis">Avis clients</h2>
-        <p class="avis__note" aria-label="Note moyenne : 4,9 sur 5">4,9<small>/5</small></p>
-        <p class="avis__count">405 clients ont donné leur avis sur Planity</p>
-        <ul class="avis__crit"><li><span>Accueil</span><strong>4,9<small>/5</small></strong></li><li><span>Propreté</span><strong>4,9<small>/5</small></strong></li><li><span>Cadre &amp; ambiance</span><strong>4,9<small>/5</small></strong></li><li><span>Qualité de la prestation</span><strong>4,9<small>/5</small></strong></li></ul>
-        <!-- Avis Google : recopier 3 à 6 avis mot pour mot (prénom, texte) dans des <li class="avis__card"> ci-dessous -->
-        <ul class="avis__cards" id="avis-cards"></ul>
-        <p class="avis__btns"><a class="btn btn--gold" href="https://www.google.com/maps/search/?api=1&query=MK+Concept+235+rue+de+Paris+59500+Douai" target="_blank" rel="noopener">Lire les avis Google<span class="sr-only"> (nouvel onglet)</span></a> <a class="btn btn--line" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Avis sur Planity<span class="sr-only"> (nouvel onglet)</span></a></p>
+        <div class="tete"><span class="sur rv">Avis clients</span><h2 class="h2 tt" id="t-avis">Elles et ils en parlent</h2></div>
+        <div class="score rv"><b data-n="4.9" data-dec="1" aria-label="4,9 sur 5">4,9</b><small>405 clients ont donné leur avis sur Planity</small></div>
+        <ul class="crit"><li><span>Accueil</span><strong>4,9<small>/5</small></strong></li><li><span>Propreté</span><strong>4,9<small>/5</small></strong></li><li><span>Cadre &amp; ambiance</span><strong>4,9<small>/5</small></strong></li><li><span>Qualité de la prestation</span><strong>4,9<small>/5</small></strong></li></ul>
+        <!-- Avis Google : recopier 3 à 6 avis mot pour mot (prénom, texte) dans des <li class="a"> -->
+        <ul class="avis-g" id="avis-cards"></ul>
+        <p class="btns pz rv"><a class="btn b3" href="https://www.google.com/maps/search/?api=1&query=MK+Concept+235+rue+de+Paris+59500+Douai" target="_blank" rel="noopener">Lire les avis Google <i>→</i><span class="sr-only"> (nouvel onglet)</span></a><a class="btn b4" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Avis sur Planity<span class="sr-only"> (nouvel onglet)</span></a></p>
       </div>
     </section>
 
-    <section class="works" id="realisations" aria-labelledby="t-works">
+    <section class="rail" id="realisations" aria-labelledby="t-real">
+      <div class="rail__st">
+        <div class="tete"><span class="sur rv">Réalisations</span><h2 class="h2 tt" id="t-real">Sorti du fauteuil</h2></div>
+        <div class="piste" id="piste">
+          <figure class="ph"><img src="assets/img/photo-mariage.webp" width="1144" height="858" alt="Deux femmes en peignoir « Team Bride » devant une robe de mariée, coiffées pour le mariage" loading="lazy" decoding="async"><figcaption>Coiffure de mariage</figcaption></figure>
+          <figure class="ph"><img src="assets/img/photo-chignon.webp" width="840" height="1120" alt="Chignon bas orné d'une branche de perles, vu de dos" loading="lazy" decoding="async"><figcaption>Chignon, branche de perles</figcaption></figure>
+          <figure class="ph"><img src="assets/img/photo-coupe.webp" width="840" height="1120" alt="Coupe courte vue de profil, dans un fauteuil de barbier ancien devant un mur de briques" loading="lazy" decoding="async"><figcaption>Coupe courte</figcaption></figure>
+          <figure class="ph"><img src="assets/img/photo-degrade.webp" width="1200" height="900" alt="Dégradé court vu de profil" loading="lazy" decoding="async"><figcaption>Dégradé</figcaption></figure>
+          <a class="fin" href="https://www.instagram.com/mkconceptdouai/" target="_blank" rel="noopener"><span>La suite sur Instagram</span><strong>@mkconceptdouai</strong><span class="sr-only"> (nouvel onglet)</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="acces" id="contact" aria-labelledby="t-acces">
       <div class="wrap">
-        <h2 class="h2" id="t-works">Réalisations</h2>
-        <ul class="works__grid">
-          <li><img src="assets/img/photo-mariage.webp" width="1144" height="858" alt="Deux femmes en peignoir « Team Bride » devant une robe de mariée, coiffées pour le mariage" loading="lazy" decoding="async"><span class="works__cap">Coiffure de mariage</span></li>
-          <li><img src="assets/img/photo-chignon.webp" width="840" height="1120" alt="Chignon bas orné d'une branche de perles, vu de dos" loading="lazy" decoding="async"><span class="works__cap">Chignon, branche de perles</span></li>
-          <li><img src="assets/img/photo-coupe.webp" width="840" height="1120" alt="Coupe courte vue de profil, dans un fauteuil de barbier ancien" loading="lazy" decoding="async"><span class="works__cap">Coupe courte</span></li>
-          <li><img src="assets/img/photo-degrade.webp" width="1200" height="900" alt="Dégradé court vu de profil" loading="lazy" decoding="async"><span class="works__cap">Dégradé</span></li>
-        </ul>
-        <p><a class="link" href="https://www.instagram.com/mkconceptdouai/" target="_blank" rel="noopener">Plus de photos sur Instagram, @mkconceptdouai<span class="sr-only"> (nouvel onglet)</span></a></p>
+        <div class="tete"><span class="sur rv">Nous trouver</span><h2 class="h2 tt" id="t-acces">235 rue de Paris, Douai</h2><p class="etat" id="status-line" aria-live="polite"></p></div>
+        <div class="acces-g">
+          <div class="rv"><h3>Adresse</h3><address>235 rue de Paris<br>59500 Douai</address><a class="btn b2" href="https://www.google.com/maps/dir/?api=1&amp;destination=235+rue+de+Paris+59500+Douai" target="_blank" rel="noopener">Itinéraire<span class="sr-only"> (Maps, nouvel onglet)</span></a></div>
+          <div class="rv" style="--d:.1s"><h3>Horaires</h3>
+            <ul id="hor">
+              <li data-j="1"><span>Lundi</span><span>14h – 18h</span></li>
+              <li data-j="2"><span>Mardi</span><span>9h30 – 19h</span></li>
+              <li data-j="3"><span>Mercredi</span><span>9h30 – 19h</span></li>
+              <li data-j="4"><span>Jeudi</span><span>10h – 20h</span></li>
+              <li data-j="5"><span>Vendredi</span><span>9h – 19h</span></li>
+              <li data-j="6"><span>Samedi</span><span>9h – 18h</span></li>
+              <li data-j="0"><span>Dimanche</span><span>Fermé</span></li>
+            </ul>
+          </div>
+          <div class="rv" style="--d:.2s"><h3>Contact</h3><p><a href="tel:+33327080781">03 27 08 07 81</a></p><p><a href="https://www.instagram.com/mkconceptdouai/" target="_blank" rel="noopener">Instagram<span class="sr-only"> (nouvel onglet)</span></a></p><p><a href="https://www.facebook.com/MkConceptDouai/" target="_blank" rel="noopener">Facebook<span class="sr-only"> (nouvel onglet)</span></a></p><a class="btn b1" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Réserver<span class="sr-only"> sur Planity (nouvel onglet)</span></a></div>
+        </div>
       </div>
     </section>
-
   </main>
 
   <footer class="footer">
-    <div class="wrap">
-      <div class="ft-top">
-        <p class="ft-logo">MK Concept</p>
-        <p class="ft-tag">Coiffeur et barbier à Douai</p>
-        <p class="ft-btns"><a class="btn btn--gold" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Prendre rendez-vous<span class="sr-only"> sur Planity (nouvel onglet)</span></a> <a class="btn btn--line" href="tel:+33327080781">03 27 08 07 81</a></p>
-      </div>
-      <div class="ft-cols">
-        <div>
-          <h2 class="ft-h">Le salon</h2>
-          <address>235 rue de Paris<br>59500 Douai</address>
-          <p><a class="ft-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=235+rue+de+Paris+59500+Douai" target="_blank" rel="noopener">Itinéraire<span class="sr-only"> (Maps, nouvel onglet)</span></a></p>
-        </div>
-        <div>
-          <h2 class="ft-h">Horaires</h2>
-          <ul class="ft-hours">
-            <li><span>Lundi</span><span>14h – 18h</span></li>
-            <li><span>Mardi</span><span>9h30 – 19h</span></li>
-            <li><span>Mercredi</span><span>9h30 – 19h</span></li>
-            <li><span>Jeudi</span><span>10h – 20h</span></li>
-            <li><span>Vendredi</span><span>9h – 19h</span></li>
-            <li><span>Samedi</span><span>9h – 18h</span></li>
-            <li><span>Dimanche</span><span>Fermé</span></li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="ft-h">Suivre</h2>
-          <ul class="ft-links">
-            <li><a href="https://www.instagram.com/mkconceptdouai/" target="_blank" rel="noopener">Instagram<span class="sr-only"> (nouvel onglet)</span></a></li>
-            <li><a href="https://www.facebook.com/MkConceptDouai/" target="_blank" rel="noopener">Facebook<span class="sr-only"> (nouvel onglet)</span></a></li>
-            <li><a href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Planity<span class="sr-only"> (nouvel onglet)</span></a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="ft-legal">
-        <p>© <span data-year>2026</span> MK Concept, Douai</p>
-        <p><a href="mentions-legales.html">Mentions légales</a> · Site créé par <a href="https://polowagency.fr" target="_blank" rel="noopener">POLOW<span class="sr-only"> (nouvel onglet)</span></a></p>
-        <a class="ft-up" href="#top" aria-label="Retour en haut">↑</a>
-      </div>
+    <div class="wrap footer__in">
+      <p class="footer__name">MK Concept</p>
+      <p class="footer__small">© <span data-year>2026</span> MK Concept, Douai · <a href="mentions-legales.html">Mentions légales</a> · Site créé par <a href="https://polowagency.fr" target="_blank" rel="noopener">POLOW<span class="sr-only"> (nouvel onglet)</span></a></p>
+      <a class="ft-up" href="#top" aria-label="Retour en haut">↑</a>
     </div>
   </footer>
 
   <div class="dock" id="dock">
-    <a class="btn btn--line" href="tel:+33327080781">Appeler</a>
-    <a class="btn btn--gold" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Prendre RDV<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
+    <a class="btn b2" href="tel:+33327080781">Appeler</a>
+    <a class="btn b1" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Réserver<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
   </div>
 
   <dialog class="hours-dialog" id="hours" aria-labelledby="hours-title">
     <div class="hours-dialog__in">
-      <div class="hours-dialog__head">
-        <h2 id="hours-title">Horaires</h2>
-        <button type="button" class="hours-dialog__close" data-close-hours aria-label="Fermer">×</button>
-      </div>
+      <div class="hours-dialog__head"><h2 id="hours-title">Horaires</h2><button type="button" class="hours-dialog__close" data-close-hours aria-label="Fermer">×</button></div>
       <p class="hours-dialog__status"><span class="dot" id="dialog-dot"></span><span id="dialog-status"></span></p>
-      <table class="hours">
-        <tbody>
-          <tr data-day="1"><th scope="row">Lundi</th><td>14h – 18h</td></tr>
-          <tr data-day="2"><th scope="row">Mardi</th><td>9h30 – 19h</td></tr>
-          <tr data-day="3"><th scope="row">Mercredi</th><td>9h30 – 19h</td></tr>
-          <tr data-day="4"><th scope="row">Jeudi</th><td>10h – 20h</td></tr>
-          <tr data-day="5"><th scope="row">Vendredi</th><td>9h – 19h</td></tr>
-          <tr data-day="6"><th scope="row">Samedi</th><td>9h – 18h</td></tr>
-          <tr data-day="0"><th scope="row">Dimanche</th><td>Fermé</td></tr>
-        </tbody>
-      </table>
+      <table class="hours"><tbody>
+        <tr data-day="1"><th scope="row">Lundi</th><td>14h – 18h</td></tr>
+        <tr data-day="2"><th scope="row">Mardi</th><td>9h30 – 19h</td></tr>
+        <tr data-day="3"><th scope="row">Mercredi</th><td>9h30 – 19h</td></tr>
+        <tr data-day="4"><th scope="row">Jeudi</th><td>10h – 20h</td></tr>
+        <tr data-day="5"><th scope="row">Vendredi</th><td>9h – 19h</td></tr>
+        <tr data-day="6"><th scope="row">Samedi</th><td>9h – 18h</td></tr>
+        <tr data-day="0"><th scope="row">Dimanche</th><td>Fermé</td></tr>
+      </tbody></table>
       <p class="hours-dialog__addr">235 rue de Paris, 59500 Douai<br><a class="link" href="tel:+33327080781">03 27 08 07 81</a></p>
-      <div class="hours-dialog__btns">
-        <a class="btn btn--gold" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Rendez-vous<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
-        <a class="btn btn--line" href="https://www.google.com/maps/dir/?api=1&amp;destination=235+rue+de+Paris+59500+Douai" target="_blank" rel="noopener">Itinéraire<span class="sr-only"> (Maps, nouvel onglet)</span></a>
-      </div>
+      <div class="hours-dialog__btns"><a class="btn b1" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Réserver<span class="sr-only"> sur Planity (nouvel onglet)</span></a><a class="btn b2" href="https://www.google.com/maps/dir/?api=1&amp;destination=235+rue+de+Paris+59500+Douai" target="_blank" rel="noopener">Itinéraire<span class="sr-only"> (Maps, nouvel onglet)</span></a></div>
     </div>
   </dialog>
 
+  <script src="assets/js/lenis.min.js"></script>
   <script type="module" src="assets/js/site.js"></script>
 </body>
 </html>
