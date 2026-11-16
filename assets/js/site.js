@@ -95,8 +95,9 @@ function scene() {
   parallax.forEach((e) => { const r = e.parentElement.getBoundingClientRect(); const c = r.top + r.height / 2 - innerHeight / 2; e.style.translate = `0 ${(c * +e.dataset.p).toFixed(1)}px`; });
   /* la façade s'ouvre */
   const p = part(ouvre), m = innerWidth < 820, k = p * p * (3 - 2 * p);
-  const fin = m ? 0 : Math.max(0, (innerWidth - 600) / 2 / innerWidth * 100); /* la photo est verticale : on la garde nette, sans l'étirer */
-  oi.style.clipPath = `inset(${mix(m ? 12 : 10, 0, k)}% ${mix(m ? 12 : 30, fin, k)}% ${mix(m ? 6 : 4, 0, k)}% ${mix(m ? 12 : 30, fin, k)}% round ${mix(400, 24, k)}px ${mix(400, 24, k)}px ${mix(24, 24, k)}px ${mix(24, 24, k)}px)`;
+  const fin = m ? 0 : Math.max(0, (innerWidth - oi.clientHeight * 9 / 16) / 2 / innerWidth * 100); /* la devanture est verticale : entière et nette, sans l'étirer */
+  const deb = m ? 12 : Math.min(48, fin + 6);
+  oi.style.clipPath = `inset(${mix(m ? 12 : 10, 0, k)}% ${mix(deb, fin, k)}% ${mix(m ? 6 : 4, 0, k)}% ${mix(deb, fin, k)}% round ${mix(400, 24, k)}px ${mix(400, 24, k)}px ${mix(24, 24, k)}px ${mix(24, 24, k)}px)`;
   oi.firstElementChild.style.transform = `scale(${mix(1.25, 1, k)})`;
   ol.style.opacity = borne((p - 0.55) * 3); ol.style.transform = `translateY(${mix(24, 0, borne((p - 0.55) * 3))}px)`;
   /* les prénoms se rejoignent */
