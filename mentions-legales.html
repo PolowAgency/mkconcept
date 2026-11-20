@@ -1,34 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mentions légales · MK Concept</title>
-  <meta name="robots" content="noindex">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/site.css">
-  <style>
-    .legal { max-width: 46rem; padding-block: calc(var(--nav-h) + 40px) 120px; }
-    .legal h1 { font-family: var(--f-serif); font-weight: 400; font-size: var(--fs-h2); color: var(--c-cream); line-height: 1; margin-bottom: 48px; }
-    .legal h2 { font-family: var(--f-serif); font-weight: 400; font-size: 1.75rem; color: var(--c-cream); margin: 40px 0 10px; }
-    .legal a { color: var(--c-gold); }
-    .legal-back { position: fixed; top: 24px; left: var(--gutter); font-size: .875rem; color: var(--c-cream); }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentions légales · MK Concept</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<style>
+@font-face { font-family: 'DM Sans'; src: url('assets/fonts/DMSans.woff2') format('woff2'); font-weight: 300 600; font-display: swap; }
+:root { --fond: #0B0A09; --bord: rgba(237,230,216,.14); --or: #C6A15B; --creme: #EDE6D8; --texte-soft: rgba(237,230,216,.68); }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', Helvetica, Arial, sans-serif; background: var(--fond); color: var(--texte-soft); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+a { color: var(--or); }
+.wrap { max-width: 720px; margin: 0 auto; padding: 48px 28px 100px; }
+.back { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--creme); font-size: .85rem; margin-bottom: 56px; }
+.back img { height: 44px; width: auto; }
+h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: clamp(2rem, 5vw, 2.6rem); color: var(--creme); line-height: 1.15; margin-bottom: 40px; }
+h2 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 1.2rem; color: var(--creme); margin: 36px 0 8px; padding-top: 24px; border-top: 1px solid var(--bord); }
+p { font-size: .92rem; }
+</style>
 </head>
 <body>
-  <a class="legal-back" href="index.html">← MK Concept</a>
-  <main class="wrap legal">
-    <h1>Mentions <em>légales</em></h1>
+  <main class="wrap">
+    <a class="back" href="index.html"><img src="assets/img/logo-mk.webp" width="197" height="160" alt="">← Retour au site</a>
+    <h1>Mentions légales</h1>
 
     <h2>Éditeur du site</h2>
-    <p>MK Concept, [forme juridique], au capital de [..] €<br>
+    <p>MK Concept, société à responsabilité limitée (SARL)<br>
     235 rue de Paris, 59500 Douai<br>
-    SIRET : [..]<br>
+    SIREN : 432 427 003 · SIRET : 432 427 003 00012<br>
     Téléphone : <a href="tel:+33327080781">03 27 08 07 81</a><br>
     Directrice de la publication : Karine Mouret</p>
 
     <h2>Hébergement</h2>
-    <p>[Nom de l'hébergeur, adresse, téléphone]</p>
+    <p>Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis<br><a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a></p>
 
     <h2>Propriété intellectuelle</h2>
     <p>Les textes, photographies et éléments graphiques de ce site appartiennent à MK Concept ou à leurs auteurs. Toute reproduction sans autorisation est interdite.</p>
