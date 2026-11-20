@@ -47,7 +47,7 @@ $$(".tt").forEach((t) => {
 const lu = $("#lu");
 lu.innerHTML = lu.textContent.split(" ").map((w) => `<span>${w}</span>`).join(" ");
 const luMots = $$("span", lu);
-const mots = ["Coupe femme", "Coupe homme", "Balayage", "Couleur", "Barbe", "Rasage à l'ancienne", "Coiffure de mariée", "Dégradé"];
+const mots = ["Coupe femme", "Coupe homme", "Balayage", "Couleur", "Barbe", "Rasage à l'ancienne", "Head spa", "Coiffure de mariée", "Dégradé"];
 $("#defile").innerHTML = [...mots, ...mots, ...mots, ...mots].map((m) => `<span>${m}</span>`).join("");
 $$("main img").forEach((i) => { if (i.complete && i.naturalWidth) return; i.classList.add("att"); const ok = () => i.classList.remove("att"); i.addEventListener("load", ok); i.addEventListener("error", ok); });
 
@@ -159,16 +159,6 @@ $$("a[data-tab]").forEach((a) => a.addEventListener("click", () => choisir(a.dat
 addEventListener("resize", placer);
 document.fonts && document.fonts.ready.then(placer);
 placer();
-
-/* ---------- Vidéo du héros ---------- */
-const vid = $("#hero-video");
-if (vid && !calme) {
-  const go = () => { vid.preload = "auto"; vid.play().then(() => vid.parentElement.classList.add("lit")).catch(() => {}); };
-  /* on attend un premier geste (ou quelques secondes) pour ne pas charger la vidéo avant la page */
-  let lancee = false; const une = () => { if (lancee) return; lancee = true; ["pointerdown", "keydown", "scroll", "touchstart"].forEach((e) => removeEventListener(e, une)); go(); };
-  ["pointerdown", "keydown", "scroll", "touchstart"].forEach((e) => addEventListener(e, une, { passive: true }));
-  addEventListener("load", () => setTimeout(une, 4000), { once: true });
-}
 
 $$("[data-year]").forEach((n) => (n.textContent = new Date().getFullYear()));
 
