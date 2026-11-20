@@ -2,30 +2,19 @@
 
 Salon de coiffure mixte, barbier et head spa, 235 rue de Paris, 59500 Douai.
 
-Site statique : HTML, CSS et JavaScript, sans framework ni étape de build. Une seule dépendance, Lenis (défilement doux, MIT).
+Site statique d'une seule page (`index.html`, CSS et JS intégrés), sans framework ni étape de build.
 
 ```
 python3 -m http.server 8000   # puis http://localhost:8000
 ```
 
 ## L'idée
-Même construction et mêmes mouvements que le site Botésens (refonte POLOW), en noir et or : intro avec rideau, nom géant lettre par lettre sur une photo de l'intérieur, bandeau doré, texte qui s'allume au défilement, façade qui s'ouvre, prénoms de l'équipe qui se rejoignent, réalisations qui défilent à l'horizontale, défilement doux. Titres en Marcellus, texte en Montserrat.
+Même construction que le site du Carré d'Hair (refonte POLOW), en noir et or : hero avec pastille et deux boutons, cartes des prestations, galerie de réalisations, blocs de tarifs, appel à réserver, contact avec horaires et plan. La réservation passe par Planity. Titres en Fraunces (Google Fonts), texte en DM Sans (`assets/fonts`).
 
 ## Structure
-- `index.html` : contenu, SEO, Open Graph, Schema.org `HairSalon`
+- `index.html` : contenu, styles, script, SEO, Open Graph, Schema.org `HairSalon`
 - `mentions-legales.html` : mentions légales
-- `assets/css/site.css` : variables en tête (couleurs, polices)
-- `assets/js/site.js` : horaires en direct, scènes au défilement, menu, onglets des tarifs, fenêtre des horaires
-- `assets/js/lenis.min.js` : défilement doux
-- `assets/fonts` : Marcellus et Montserrat (woff2, licence OFL)
-- `assets/img` : vraies photos (`photo-*.webp`), cartes des prestations (`gamme-*.webp`), logo officiel (`logo-mk.webp`, tiré du logo retenu le 16/11/2026), icônes (`favicon.png`, `apple-touch-icon.png`), image de partage (`og.jpg`)
-
-## Fonctionnement dégradé
-- Mouvement réduit : pas d'intro ni d'animation, tout est affiché.
-- Sans JavaScript : tout le contenu et tous les tarifs restent lisibles.
-
-## Images
-Les `photo-*.webp` sont les vraies photos fournies : recadrées, converties, métadonnées retirées. Pour en ajouter, recopier une `<figure class="ph">` dans la section Réalisations.
+- `assets/img` : vraies photos du salon (`photo-*.webp`, `gamme-*.webp`, etc.), logo officiel (`logo-mk.webp`), icônes, image de partage (`og.jpg`)
 
 ## Sources des informations (vérifiées le 20/11/2026)
 - Horaires, tarifs, prix du head spa, note (4,9 sur 410 avis) : page Planity du salon.
@@ -34,7 +23,7 @@ Les `photo-*.webp` sont les vraies photos fournies : recadrées, converties, mé
 - Accord pour les photos de clientes : donné par le salon (20/11/2026).
 
 ## À compléter avant mise en ligne
-- **Photos de l'équipe** : Karine et Christophe n'ont que leur initiale dans l'arche (bloc `.ph-vide`). Remplacer par `<img src="assets/img/equipe-prenom.webp" alt="Prénom, fonction">`.
+- **Photos de l'équipe** : à venir (Karine et Christophe), pour une éventuelle section équipe.
 - **Prix du barbier** : taille de barbe et rasage affichent « sur Planity » (Planity ne montre pas leur prix publiquement).
 - **Capital social** : à ajouter dans les mentions légales.
 - **Domaine** : `mkconcept-douai.fr` est un nom provisoire (canonical, OG, JSON-LD, sitemap).

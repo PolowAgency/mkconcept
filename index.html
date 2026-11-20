@@ -1,38 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <script>
-    // Prépare les états d'animation avant le premier rendu (pas de flash)
-    document.documentElement.className = "js" + (matchMedia("(prefers-reduced-motion: reduce)").matches ? "" : " motion");
-  </script>
-
-  <title>MK Concept · Coiffeur et barbier à Douai · 4,9/5 sur 410 avis</title>
-  <meta name="description" content="MK Concept, coiffeur et barbier à Douai, 235 rue de Paris. Coupe femme et homme, couleur, balayage, dégradé, barbe, rasage, head spa, coiffure de mariée. 4,9/5 sur 410 avis. Réservation en ligne.">
-  <link rel="canonical" href="https://www.mkconcept-douai.fr/">
-  <meta name="theme-color" content="#0B0A09">
-
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:site_name" content="MK Concept">
-  <meta property="og:title" content="MK Concept · Coiffeur et barbier à Douai">
-  <meta property="og:description" content="Coiffeur et barbier à Douai : femmes, hommes, barbes, head spa, mariées. 4,9/5 sur 410 avis. 235 rue de Paris.">
-  <meta property="og:url" content="https://www.mkconcept-douai.fr/">
-  <meta property="og:image" content="https://www.mkconcept-douai.fr/assets/img/og.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="icon" href="assets/img/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preload" href="assets/fonts/Marcellus.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/Montserrat.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/img/hero-interieur.webp">
-  <link rel="stylesheet" href="assets/css/site.css">
-
-  <!-- SEO local : à garder synchronisé avec le bloc Contact -->
-  <script type="application/ld+json">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MK Concept · Coiffeur, barbier et head spa à Douai · 4,9/5 sur 410 avis</title>
+<meta name="description" content="MK Concept, coiffeur et barbier à Douai, 235 rue de Paris. Coupe femme et homme, couleur, balayage, barbe, head spa, coiffure de mariée. 4,9/5 sur 410 avis. Réservation en ligne sur Planity.">
+<link rel="canonical" href="https://www.mkconcept-douai.fr/">
+<meta name="theme-color" content="#0B0A09">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="MK Concept">
+<meta property="og:title" content="MK Concept · Coiffeur et barbier à Douai">
+<meta property="og:description" content="Coiffeur et barbier à Douai : femmes, hommes, barbes, head spa, mariées. 4,9/5 sur 410 avis. 235 rue de Paris.">
+<meta property="og:url" content="https://www.mkconcept-douai.fr/">
+<meta property="og:image" content="https://www.mkconcept-douai.fr/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/DMSans.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "HairSalon",
@@ -71,188 +62,568 @@
     }
   }
   </script>
+<style>
+@font-face { font-family: 'DM Sans'; src: url('assets/fonts/DMSans.woff2') format('woff2'); font-weight: 300 600; font-display: swap; }
+
+:root {
+  --fond:       #0B0A09;
+  --fond-2:     #151311;
+  --carte:      #1A1714;
+  --bord:       rgba(237,230,216,.14);
+  --or:         #C6A15B;
+  --or-l:       #E3C88F;
+  --or-f:       #8A6B2C;
+  --creme:      #EDE6D8;
+  --texte:      #EDE6D8;
+  --texte-soft: rgba(237,230,216,.68);
+  --texte-muted:rgba(237,230,216,.45);
+  --encre:      #120D05;
+
+  --r: 20px;
+  --r-lg: 32px;
+  --font-t: 'Fraunces', Georgia, serif;
+  --font-b: 'DM Sans', Helvetica, Arial, sans-serif;
+  --ease: 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; background: var(--fond); }
+body { font-family: var(--font-b); background: var(--fond); color: var(--texte); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+:focus-visible { outline: 2px solid var(--or); outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+.ico { width: 26px; height: 26px; stroke: var(--or); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── HEADER ─────────────────────────────────── */
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 18px 28px;
+  transition: var(--ease);
+}
+header.up {
+  background: rgba(11,10,9,.92);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  padding: 10px 28px;
+  box-shadow: 0 1px 0 var(--bord);
+}
+.hd { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.logo img { height: 48px; width: auto; transition: var(--ease); }
+header.up .logo img { height: 40px; }
+nav { display: none; gap: 28px; }
+nav a { font-size: .85rem; font-weight: 500; color: var(--texte-soft); transition: color .2s; }
+nav a:hover { color: var(--or-l); }
+.btn-resa {
+  background: var(--or); color: var(--encre); font-weight: 600; font-size: .85rem;
+  padding: 10px 22px; border-radius: 50px; transition: var(--ease); white-space: nowrap;
+}
+.btn-resa:hover { background: var(--or-l); transform: translateY(-1px); }
+@media(min-width:760px){ nav { display: flex; } }
+
+/* ── HERO ────────────────────────────────────── */
+#hero {
+  min-height: 100svh;
+  display: grid; place-items: center;
+  padding: 140px 28px 80px;
+  background: var(--fond-2);
+  position: relative; overflow: hidden;
+}
+.hero-blob {
+  position: absolute; top: -20%; right: -10%;
+  width: 55vw; min-width: 320px;
+  aspect-ratio: 1;
+  background: radial-gradient(circle at 40% 40%, #6B5428 0%, #3A2E18 60%, transparent 100%);
+  border-radius: 50%;
+  opacity: .55;
+  pointer-events: none;
+}
+.hero-inner { position: relative; text-align: center; max-width: 640px; }
+.hero-chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--carte); border: 1px solid var(--bord);
+  padding: 5px 14px 5px 8px; border-radius: 50px;
+  font-size: .75rem; font-weight: 500; color: var(--texte-soft);
+  margin-bottom: 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.3);
+  animation: up .7s ease both;
+}
+.chip-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--or); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(198,161,91,.45)} 50%{box-shadow:0 0 0 6px rgba(198,161,91,0)} }
+h1 {
+  font-family: var(--font-t); font-size: clamp(2.6rem, 7vw, 4.4rem);
+  font-weight: 600; line-height: 1.1; color: var(--creme);
+  margin-bottom: 20px; animation: up .7s .08s ease both;
+}
+h1 em { font-style: italic; font-weight: 400; color: var(--or); }
+.hero-sub {
+  font-size: 1.05rem; color: var(--texte-soft); line-height: 1.7;
+  margin-bottom: 40px; animation: up .7s .16s ease both;
+}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; animation: up .7s .24s ease both; }
+.btn-p {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--or); color: var(--encre); font-weight: 600; font-size: .9rem;
+  padding: 14px 28px; border-radius: 50px; transition: var(--ease);
+}
+.btn-p:hover { background: var(--or-l); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(198,161,91,.25); }
+.btn-s {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; border: 2px solid var(--bord);
+  color: var(--texte); font-weight: 500; font-size: .9rem;
+  padding: 12px 26px; border-radius: 50px; transition: var(--ease);
+}
+.btn-s:hover { border-color: var(--or); color: var(--or-l); }
+.btn-p svg, .btn-s svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+@keyframes up { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── SECTION LABEL ───────────────────────────── */
+.sec-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: .72rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--or); margin-bottom: 14px;
+}
+.sec-label::before { content:''; width:22px; height:2px; background:var(--or); border-radius:2px; display:block; }
+.sec-head { margin-bottom: 56px; }
+.sec-head h2 { font-family: var(--font-t); font-size: clamp(1.8rem,4vw,2.6rem); color: var(--creme); font-weight: 600; line-height: 1.15; }
+
+/* ── SERVICES ───────────────────────────────── */
+#services { padding: 100px 0; background: var(--fond); }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px,1fr)); gap: 20px; }
+.card {
+  background: var(--carte); border: 1px solid var(--bord);
+  border-radius: var(--r-lg); padding: 32px 28px;
+  transition: var(--ease);
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.4); border-color: rgba(198,161,91,.4); }
+.card.accent { background: var(--or); border-color: transparent; color: var(--encre); }
+.card.accent p { color: rgba(18,13,5,.72); }
+.card.accent .ctag { background: rgba(18,13,5,.12); color: var(--encre); }
+.card.accent .card-cat { color: rgba(18,13,5,.6); }
+.card.accent .ico { stroke: var(--encre); }
+.card-ico { margin-bottom: 16px; }
+.card-cat { font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--or); margin-bottom: 5px; }
+.card h3 { font-family: var(--font-t); font-size: 1.15rem; font-weight: 600; margin-bottom: 10px; }
+.card p { font-size: .875rem; color: var(--texte-soft); line-height: 1.65; margin-bottom: 18px; }
+.ctags { display: flex; flex-wrap: wrap; gap: 6px; }
+.ctag { background: rgba(237,230,216,.07); font-size: .7rem; font-weight: 500; color: var(--texte-soft); padding: 3px 10px; border-radius: 50px; }
+
+/* ── GALERIE ────────────────────────────────── */
+#galerie { padding: 100px 0; background: var(--fond-2); }
+.gal-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 14px;
+}
+@media(min-width:640px){ .gal-grid { grid-template-columns: repeat(3,1fr); } .gal-grid .gal-item.wide { aspect-ratio: auto; } }
+.gal-item {
+  border-radius: var(--r); overflow: hidden; position: relative;
+  aspect-ratio: 3/4; background: var(--carte); margin: 0;
+}
+.gal-item.wide { aspect-ratio: 16/9; grid-column: span 2; }
+.gal-item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.gal-item:hover img { transform: scale(1.04); }
+.gal-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(11,10,9,.85) 0%, transparent 55%);
+  opacity: 0; transition: opacity .3s;
+  display: flex; align-items: flex-end; padding: 18px;
+}
+.gal-item:hover .gal-overlay { opacity: 1; }
+@media(hover:none){ .gal-overlay { opacity: 1; } }
+.gal-label { color: #fff; }
+.gal-label strong { display: block; font-family: var(--font-t); font-size: 1rem; font-weight: 600; }
+.gal-label span { font-size: .75rem; opacity: .8; }
+.gal-badge {
+  position: absolute; top: 12px; left: 12px;
+  background: var(--or); color: var(--encre);
+  font-size: .65rem; font-weight: 600; padding: 3px 9px;
+  border-radius: 50px; letter-spacing: .05em;
+}
+
+/* ── TARIFS ─────────────────────────────────── */
+#tarifs { padding: 100px 0; background: var(--fond); }
+.tarifs-wrap { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px,1fr)); gap: 20px; }
+.tbloc { background: var(--carte); border: 1px solid var(--bord); border-radius: var(--r-lg); padding: 32px 28px; transition: var(--ease); }
+.tbloc:hover { box-shadow: 0 12px 40px rgba(0,0,0,.4); border-color: rgba(198,161,91,.4); }
+.tbloc.hi { background: var(--or); border-color: transparent; color: var(--encre); }
+.tbloc.hi .t-cat { color: rgba(18,13,5,.6); }
+.tbloc.hi .t-row { border-color: rgba(18,13,5,.15); }
+.tbloc.hi .t-prix { color: var(--encre); }
+.tbloc.hi .t-note { color: rgba(18,13,5,.65); }
+.tbloc.hi .ico { stroke: var(--encre); }
+.t-ico { margin-bottom: 12px; }
+.t-cat { font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--or); margin-bottom: 4px; }
+.tbloc h3 { font-family: var(--font-t); font-size: 1.2rem; font-weight: 600; margin-bottom: 22px; }
+.t-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--bord); font-size: .875rem; }
+.t-row:last-of-type { border: none; }
+.t-prix { font-weight: 600; color: var(--or-l); white-space: nowrap; }
+.t-note { font-size: .78rem; color: var(--texte-muted); margin-top: 12px; }
+.t-note a { color: var(--or); }
+.tbloc.hi .t-note a { color: var(--encre); text-decoration: underline; }
+.t-src { text-align: center; font-size: .8rem; color: var(--texte-muted); margin-top: 28px; }
+
+/* ── RÉSERVATION (section CTA) ───────────────── */
+#reservation { padding: 100px 0; background: var(--fond-2); }
+.resa-cta-wrap { max-width: 560px; margin: 0 auto; text-align: center; }
+.resa-cta-wrap .sec-head { margin-bottom: 28px; }
+.resa-cta-wrap p { font-size: .92rem; color: var(--texte-soft); line-height: 1.75; margin-bottom: 32px; }
+.resa-cta-perks { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 36px; }
+.resa-perk { display: flex; align-items: center; gap: 7px; font-size: .8rem; color: var(--texte-soft); background: var(--carte); border: 1px solid var(--bord); padding: 6px 14px; border-radius: 50px; }
+.resa-perk::before { content: '✓'; color: var(--or); font-weight: 700; }
+
+/* ── CONTACT ────────────────────────────────── */
+#contact { padding: 100px 0; background: var(--fond); }
+.contact-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
+@media(min-width:840px){ .contact-grid { grid-template-columns: 1fr 1fr; align-items: start; } }
+.contact-items { display: flex; flex-direction: column; gap: 22px; margin-bottom: 32px; }
+.ci { display: flex; align-items: flex-start; gap: 14px; }
+.ci-ico { width: 42px; height: 42px; border-radius: 12px; background: var(--carte); border: 1px solid var(--bord); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.ci-ico .ico { width: 19px; height: 19px; }
+.ci-lbl { font-size: .68rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--or); margin-bottom: 3px; }
+.ci-val { font-size: .92rem; color: var(--texte); font-weight: 500; line-height: 1.5; }
+.ci-val a:hover { color: var(--or-l); }
+.horaires { display: grid; grid-template-columns: auto 1fr; gap: 3px 14px; font-size: .85rem; }
+.h-j { color: var(--texte-muted); }
+.h-h { font-weight: 500; font-variant-numeric: tabular-nums; }
+.h-off { color: var(--texte-muted); }
+.horaires .auj { color: var(--or-l); }
+.contact-cta { background: var(--carte); border: 1px solid rgba(198,161,91,.35); border-radius: var(--r-lg); padding: 26px 24px; text-align: center; }
+.contact-cta h3 { font-family: var(--font-t); font-size: 1.1rem; font-weight: 600; color: var(--creme); margin-bottom: 6px; }
+.contact-cta p { font-size: .82rem; color: var(--texte-soft); margin-bottom: 18px; }
+.map-frame { border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--bord); box-shadow: 0 8px 40px rgba(0,0,0,.4); background: var(--carte); }
+.map-frame iframe { width: 100%; height: 340px; display: block; border: none; filter: grayscale(.4) invert(.9) hue-rotate(180deg) contrast(.9); }
+
+/* ── FOOTER ─────────────────────────────────── */
+footer { background: #050404; color: var(--texte-muted); padding: 36px 0 24px; border-top: 1px solid var(--bord); }
+.ft { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; }
+.ft-logo img { height: 52px; width: auto; }
+.ft-info { font-size: .8rem; }
+.ft-sep { width: 100%; height: 1px; background: var(--bord); margin: 18px 0; }
+.ft-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; font-size: .75rem; }
+.ft-links { display: flex; gap: 18px; }
+.ft-links a:hover { color: var(--or-l); }
+
+/* ── REVEAL ─────────────────────────────────── */
+.js .rv { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
+.js .rv.in { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .js .rv { opacity: 1; transform: none; }
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-  <script>document.documentElement.classList.add('js')</script>
-  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-  <div id="intro" aria-hidden="true"><div><span class="intro__name">MK Concept</span><span class="intro__sub">Coiffeur &amp; barbier · Douai</span><b></b></div></div>
-  <div class="jauge" id="jauge" aria-hidden="true"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ciseaux" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></symbol>
+  <symbol id="i-couleur" viewBox="0 0 24 24"><path d="M12 3c3.5 4 6 7.2 6 10.5A6 6 0 0 1 6 13.5C6 10.2 8.5 7 12 3Z"/><path d="M9 14a3 3 0 0 0 3 3"/></symbol>
+  <symbol id="i-peigne" viewBox="0 0 24 24"><path d="M3 9h18v3H3z"/><path d="M5 12v7M8 12v7M11 12v7M14 12v7M17 12v7M20 12v7"/></symbol>
+  <symbol id="i-rasoir" viewBox="0 0 24 24"><path d="M3 14 14 3l3 3-8 8"/><path d="M9 14l1.5 1.5L5 21l-2-2 5.5-5.5"/></symbol>
+  <symbol id="i-spa" viewBox="0 0 24 24"><path d="M12 20c-4-2-7-5-7-9 3 0 5.5 1.5 7 4 1.5-2.5 4-4 7-4 0 4-3 7-7 9Z"/><path d="M12 15c0-4 0-7 0-11 2 2 3 4 3 6.5"/></symbol>
+  <symbol id="i-bague" viewBox="0 0 24 24"><circle cx="12" cy="14" r="6"/><path d="M9 4h6l-3 4z"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-horloge" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+</svg>
 
-  <header class="nav" id="nav">
-    <div class="wrap nav__in">
-      <a class="logo" href="#top"><img class="logo__img" src="assets/img/logo-mk.webp" width="197" height="160" alt="MK Concept, retour en haut"></a>
-      <nav class="menu" id="menu" aria-label="Menu principal">
-        <a href="#prestations">Tarifs</a>
-        <a href="#prestations" data-tab="headspa">Head spa</a>
-        <a href="#realisations">Réalisations</a>
-        <a href="#equipe">L'équipe</a>
-        <a href="#avis">Avis</a>
-        <button type="button" class="menu__btn" data-open-hours>Horaires</button>
-        <a class="btn b1 res-m" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Réserver<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
-      </nav>
-      <a class="btn b1 res-d" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Réserver<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
-      <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><b></b><b></b></button>
-    </div>
-  </header>
-
-  <main id="contenu">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero__bg" aria-hidden="true"><img src="assets/img/hero-interieur.webp" width="1420" height="660" alt="" decoding="async" fetchpriority="high"></div>
-      <div class="wrap">
-        <span class="sur rv">Coiffeur et barbier à Douai</span>
-        <h1 id="hero-title" class="hero__title" aria-label="MK Concept">MK Concept</h1>
-        <p class="lead rv">Femmes, hommes, barbes. Installez-vous, on s'occupe du reste.</p>
-        <div class="btns rv"><a class="btn b1" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Prendre rendez-vous <i>→</i><span class="sr-only"> sur Planity (nouvel onglet)</span></a><a class="btn b2" href="#prestations">Voir les tarifs</a></div>
-        <a class="pastille rv" href="#avis" style="--d:.5s"><b>4,9</b><small>410 avis clients</small></a>
-      </div>
-    </section>
-
-    <div class="defile" aria-hidden="true"><div id="defile"></div></div>
-
-    <section class="lu-s" aria-label="Présentation">
-      <p class="lu" id="lu">Chez MK Concept, on prend le temps d'écouter avant de couper. Karine et son équipe coiffent les femmes et les hommes, taillent les barbes, préparent les mariées au salon ou à domicile, et vous offrent une pause au head spa.</p>
-    </section>
-
-    <div class="ouvre" id="ouvre">
-      <div class="st">
-        <div class="img"><img src="assets/img/devanture.webp" width="1152" height="2048" alt="La devanture de MK Concept, rue de Paris : « La coiffure &amp; la barbe »" loading="lazy" decoding="async"></div>
-        <p class="leg">235 rue de Paris, Douai</p>
-      </div>
-    </div>
-
-    <section class="gamme-s" aria-labelledby="t-gamme">
-      <div class="wrap">
-        <div class="tete"><span class="sur rv">Prestations</span><h2 class="h2 tt" id="t-gamme">Pour elle, pour lui</h2></div>
-        <div class="gamme">
-          <a class="g" href="#prestations" data-tab="femme"><img src="assets/img/gamme-femme.webp" width="840" height="1050" alt="" loading="lazy" decoding="async"><b>Coiffure femme</b></a>
-          <a class="g" href="#prestations" data-tab="homme"><img src="assets/img/photo-degrade-2.webp" width="840" height="1050" alt="" loading="lazy" decoding="async"><b>Coiffure homme</b></a>
-          <a class="g" href="#prestations" data-tab="barbier"><img src="assets/img/gamme-barbier.webp" width="840" height="1050" alt="" loading="lazy" decoding="async"><b>Barbier</b></a>
-          <a class="g" href="#prestations" data-tab="headspa"><img src="assets/img/gamme-headspa.webp" width="515" height="644" alt="" loading="lazy" decoding="async"><b>Head spa</b></a>
-          <a class="g" href="#prestations" data-tab="femme"><img src="assets/img/photo-mariage.webp" width="1144" height="858" alt="" loading="lazy" decoding="async"><b>Mariée</b></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="carte" id="prestations" aria-labelledby="t-carte">
-      <div class="wrap etroit">
-        <div class="tete"><span class="sur rv">Tarifs</span><h2 class="h2 tt" id="t-carte">Ce que ça coûte</h2><p class="lead rv">Tarifs relevés sur Planity. Le prix exact s'affiche à la réservation, selon la longueur.</p></div>
-        <div class="puces" id="carte-seg" role="tablist" aria-label="Catégories de prestations">
-          <span class="ind" id="ind" aria-hidden="true"></span>
-          <button type="button" class="puce" role="tab" id="tab-femme" aria-controls="p-femme" aria-selected="true">Femme</button>
-          <button type="button" class="puce" role="tab" id="tab-homme" aria-controls="p-homme" aria-selected="false" tabindex="-1">Homme</button>
-          <button type="button" class="puce" role="tab" id="tab-barbier" aria-controls="p-barbier" aria-selected="false" tabindex="-1">Barbier</button>
-          <button type="button" class="puce" role="tab" id="tab-headspa" aria-controls="p-headspa" aria-selected="false" tabindex="-1">Head spa</button>
-        </div>
-        <div class="svcs" id="p-femme" role="tabpanel" aria-labelledby="tab-femme"><ul><li class="svc"><div><h3 class="svc__name">Coupe &amp; coiffage</h3><p class="svc__meta">Shampoing compris · 45 à 55 min selon la longueur</p></div><span class="svc__price">41 à 53&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : coupe et coiffage femme (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Frange</h3><p class="svc__meta">Entre deux coupes</p></div><span class="svc__price">5&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : frange (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Coloration</h3><p class="svc__meta">Shampoing et coiffage · 1 h 35</p></div><span class="svc__price">dès 55&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : coloration (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Coloration &amp; coupe</h3><p class="svc__meta">Shampoing, coupe et coiffage · 1 h 30</p></div><span class="svc__price">dès 76&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : coloration et coupe (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Balayage &amp; brushing</h3><p class="svc__meta">Balayage surface · 1 h 30</p></div><span class="svc__price">dès 58&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : balayage et brushing (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Balayage &amp; coupe</h3><p class="svc__meta">Shampoing, coupe et coiffage</p></div><span class="svc__price">dès 79&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : balayage et coupe (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Ombré, balayage ou mèches Olaplex</h3><p class="svc__meta">Soin Olaplex inclus · 2 h à 2 h 15</p></div><span class="svc__price">dès 69&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : ombré, balayage ou mèches Olaplex (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Balayage à l'argile</h3><p class="svc__meta">Coloration végétale · 1 h 10 à 1 h 20</p></div><span class="svc__price">60 à 70&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : balayage à l'argile (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Mariée, au salon ou à domicile</h3><p class="svc__meta">Avec Karine</p></div><span class="svc__price">sur devis</span><a class="svc__link" href="tel:+33327080781"><span class="sr-only">Appeler le salon pour un devis mariée</span></a></li></ul></div>
-        <div class="svcs" id="p-homme" role="tabpanel" aria-labelledby="tab-homme" hidden><ul><li class="svc"><div><h3 class="svc__name">Coupe &amp; coiffage</h3><p class="svc__meta">Shampoing compris · 20 min</p></div><span class="svc__price">25&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : coupe et coiffage homme (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Coupe étudiant</h3><p class="svc__meta">16 à 25 ans · 20 min</p></div><span class="svc__price">20&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : coupe étudiant (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Shampoing &amp; coiffage</h3><p class="svc__meta">15 min</p></div><span class="svc__price">12&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : shampoing et coiffage (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Mèches homme</h3><p class="svc__meta">30 min</p></div><span class="svc__price">20 à 60&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : mèches homme (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Formules abonné</h3><p class="svc__meta">Au salon uniquement, pas en ligne</p></div><span class="svc__price">dès 15&nbsp;€</span><a class="svc__link" href="tel:+33327080781"><span class="sr-only">Appeler le salon pour une formule abonné</span></a></li></ul></div>
-        <div class="svcs" id="p-barbier" role="tabpanel" aria-labelledby="tab-barbier" hidden><ul><li class="svc"><div><h3 class="svc__name">Taille de barbe</h3></div><span class="svc__price">sur Planity</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : taille de barbe (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Rasage à l'ancienne</h3><p class="svc__meta">Au rasoir</p></div><span class="svc__price">sur Planity</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : rasage à l'ancienne (Planity, nouvel onglet)</span></a></li></ul></div>
-        <div class="svcs" id="p-headspa" role="tabpanel" aria-labelledby="tab-headspa" hidden><ul><li class="svc"><div><h3 class="svc__name">Head spa Kami</h3><p class="svc__meta">Massage du cuir chevelu inspiré du shiatsu, soin et coiffage · 1 h</p></div><span class="svc__price">70&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : head spa Kami (Planity, nouvel onglet)</span></a></li><li class="svc"><div><h3 class="svc__name">Head spa Kami Kao</h3><p class="svc__meta">Head spa, soin du visage et coiffage · 1 h 30</p></div><span class="svc__price">99&nbsp;€</span><a class="svc__link" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><span class="sr-only">Réserver : head spa Kami Kao (Planity, nouvel onglet)</span></a></li></ul></div>
-        <p class="btns carte__cta"><a class="btn b1" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Réserver une prestation <i>→</i><span class="sr-only"> sur Planity (nouvel onglet)</span></a></p>
-      </div>
-    </section>
-
-    <section class="noms-s" id="equipe" aria-labelledby="t-eq">
-      <div class="tete"><span class="sur rv">L'équipe</span><h2 class="sr-only" id="t-eq">L'équipe de MK Concept</h2></div>
-      <div class="noms" id="noms" aria-hidden="true"><div id="n1">Karine</div><em>&amp;</em><div id="n2">Perrine</div><em>&amp;</em><div id="n3">Christophe</div></div>
-      <div class="wrap">
-        <ul class="equipe">
-          <!-- Photos : remplacer le bloc .ph-vide par <img src="assets/img/equipe-prenom.webp" alt="Prénom, fonction"> -->
-          <li class="rv"><div class="arche ph-vide"><span aria-hidden="true">K</span></div><h3>Karine</h3><p>Gérante</p></li>
-          <li class="rv" style="--d:.1s"><div class="arche ph-photo"><img src="assets/img/equipe-perrine.webp" width="840" height="1120" alt="Perrine pendant un soin visage, au coin barbier" loading="lazy" decoding="async"></div><h3>Perrine</h3><p>Coiffeuse</p></li>
-          <li class="rv" style="--d:.2s"><div class="arche ph-vide"><span aria-hidden="true">C</span></div><h3>Christophe</h3><p>Coiffeur</p></li>
-        </ul>
-        <p class="lead rv equipe__mot">MK Concept, c'est le salon de Karine, au 235 rue de Paris à Douai. Elle prend le temps d'écouter avant de couper, et elle coiffe aussi les mariées, au salon ou chez elles.</p>
-      </div>
-    </section>
-
-    <section class="avis" id="avis" aria-labelledby="t-avis">
-      <div class="wrap">
-        <div class="tete"><span class="sur rv">Avis clients</span><h2 class="h2 tt" id="t-avis">Elles et ils en parlent</h2></div>
-        <div class="score rv"><b data-n="4.9" data-dec="1" aria-label="4,9 sur 5">4,9</b><small>410 clients ont donné leur avis sur Planity</small></div>
-        <ul class="crit"><li><span>Accueil</span><strong>4,9<small>/5</small></strong></li><li><span>Propreté</span><strong>4,9<small>/5</small></strong></li><li><span>Cadre &amp; ambiance</span><strong>4,9<small>/5</small></strong></li><li><span>Qualité de la prestation</span><strong>4,9<small>/5</small></strong></li></ul>
-        <ul class="avis-g" id="avis-cards">
-          <li class="a rv" style="--d:0.00s"><span class="a__st" aria-label="5 sur 5">★★★★★</span><blockquote>« Je suis vraiment ravie de mon balayage ! L’équipe est adorable, on se sent tout de suite à l’aise au salon. Le résultat est lumineux et naturel, exactement ce que je voulais. »</blockquote><p><b>Manon</b> · balayage</p></li>
-          <li class="a rv" style="--d:0.08s"><span class="a__st" aria-label="5 sur 5">★★★★★</span><blockquote>« Ravie, coupe et balayage parfait ! Accueillie et renseignée sur mon choix de coupe comme je voulais. Je recommande à 100 %. Merci Karine »</blockquote><p><b>Véronique</b> · coupe et balayage</p></li>
-          <li class="a rv" style="--d:0.16s"><span class="a__st" aria-label="5 sur 5">★★★★★</span><blockquote>« Fidèle client depuis plus de 8 ans maintenant, j’ai toujours été parfaitement satisfait des prestations (cheveux et barbe) ! Le personnel est accueillant, à l’écoute et très professionnel. »</blockquote><p><b>Damien</b> · cheveux et barbe</p></li>
-          <li class="a rv" style="--d:0.00s"><span class="a__st" aria-label="5 sur 5">★★★★★</span><blockquote>« Venue pour mon fils aujourd’hui, un grand merci à l’équipe. Coiffeuse au top, qui lui parle, lui explique ce qu’elle va lui faire, de la douceur. Rapport qualité / prix parfait. »</blockquote><p><b>Marianne</b> · coupe enfant</p></li>
-          <li class="a rv" style="--d:0.08s"><span class="a__st" aria-label="5 sur 5">★★★★★</span><blockquote>« J’y suis allée ce matin pour la 1re fois. J’ai fait une permanente et j’en suis plus que ravie. Salon impeccable, coiffeuse à l’écoute et de très bon conseil. »</blockquote><p><b>Sandrine</b> · permanente</p></li>
-          <li class="a rv" style="--d:0.16s"><span class="a__st" aria-label="5 sur 5">★★★★★</span><blockquote>« Moment très agréable. Perrine est à l’écoute, très douce… Professionnelle. »</blockquote><p><b>Candel</b> · mèches, patine, brushing</p></li>
-        </ul>
-        <p class="a__src">Extraits d'avis Google</p>
-        <p class="btns pz rv"><a class="btn b3" href="https://www.google.com/maps/search/?api=1&query=MK+Concept+235+rue+de+Paris+59500+Douai" target="_blank" rel="noopener">Lire les avis Google <i>→</i><span class="sr-only"> (nouvel onglet)</span></a><a class="btn b4" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Avis sur Planity<span class="sr-only"> (nouvel onglet)</span></a></p>
-      </div>
-    </section>
-
-    <section class="rail" id="realisations" aria-labelledby="t-real">
-      <div class="rail__st">
-        <div class="tete"><span class="sur rv">Réalisations</span><h2 class="h2 tt" id="t-real">Sorti du fauteuil</h2></div>
-        <div class="piste" id="piste">
-          <figure class="ph"><img src="assets/img/photo-mariage.webp" width="1144" height="858" alt="Deux femmes en peignoir « Team Bride » devant une robe de mariée, coiffées pour le mariage" loading="lazy" decoding="async"><figcaption>Coiffure de mariage</figcaption></figure>
-          <figure class="ph"><img src="assets/img/photo-chignon.webp" width="840" height="1120" alt="Chignon bas orné d'une branche de perles, vu de dos" loading="lazy" decoding="async"><figcaption>Chignon, branche de perles</figcaption></figure>
-          <figure class="ph"><img src="assets/img/photo-platine.webp" width="840" height="1050" alt="Coupe courte texturée, couleur platine, vue de profil devant le mur végétal" loading="lazy" decoding="async"><figcaption>Court platine</figcaption></figure>
-          <figure class="ph"><img src="assets/img/photo-coupe.webp" width="840" height="1120" alt="Coupe courte vue de profil, dans un fauteuil de barbier ancien devant un mur de briques" loading="lazy" decoding="async"><figcaption>Coupe courte</figcaption></figure>
-          <figure class="ph"><img src="assets/img/photo-degrade.webp" width="1200" height="900" alt="Dégradé court vu de profil" loading="lazy" decoding="async"><figcaption>Dégradé</figcaption></figure>
-          <figure class="ph"><img src="assets/img/photo-degrade-2.webp" width="840" height="1050" alt="Dégradé net et dessus texturé, vu de profil, les bacs en fond" loading="lazy" decoding="async"><figcaption>Dégradé texturé</figcaption></figure>
-          <a class="fin" href="https://www.instagram.com/mkconceptdouai/" target="_blank" rel="noopener"><span>La suite sur Instagram</span><strong>@mkconceptdouai</strong><span class="sr-only"> (nouvel onglet)</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="acces" id="contact" aria-labelledby="t-acces">
-      <div class="wrap">
-        <div class="tete"><span class="sur rv">Nous trouver</span><h2 class="h2 tt" id="t-acces">235 rue de Paris, Douai</h2><p class="etat" id="status-line" aria-live="polite"></p></div>
-        <div class="acces-g">
-          <div class="rv"><h3>Adresse</h3><address>235 rue de Paris<br>59500 Douai</address><a class="btn b2" href="https://www.google.com/maps/dir/?api=1&amp;destination=235+rue+de+Paris+59500+Douai" target="_blank" rel="noopener">Itinéraire<span class="sr-only"> (Maps, nouvel onglet)</span></a></div>
-          <div class="rv" style="--d:.1s"><h3>Horaires</h3>
-            <ul id="hor">
-              <li data-j="1"><span>Lundi</span><span>14h – 18h</span></li>
-              <li data-j="2"><span>Mardi</span><span>9h30 – 19h</span></li>
-              <li data-j="3"><span>Mercredi</span><span>9h30 – 19h</span></li>
-              <li data-j="4"><span>Jeudi</span><span>10h – 20h</span></li>
-              <li data-j="5"><span>Vendredi</span><span>9h – 19h</span></li>
-              <li data-j="6"><span>Samedi</span><span>9h – 18h</span></li>
-              <li data-j="0"><span>Dimanche</span><span>Fermé</span></li>
-            </ul>
-          </div>
-          <div class="rv" style="--d:.2s"><h3>Contact</h3><p><a href="tel:+33327080781">03 27 08 07 81</a></p><p><a href="https://www.instagram.com/mkconceptdouai/" target="_blank" rel="noopener">Instagram<span class="sr-only"> (nouvel onglet)</span></a></p><p><a href="https://www.facebook.com/MkConceptDouai/" target="_blank" rel="noopener">Facebook<span class="sr-only"> (nouvel onglet)</span></a></p><a class="btn b1" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Réserver<span class="sr-only"> sur Planity (nouvel onglet)</span></a></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap footer__in">
-      <img class="footer__logo" src="assets/img/logo-mk.webp" width="197" height="160" alt="MK Concept" loading="lazy" decoding="async">
-      <p class="footer__small">© <span data-year>2026</span> MK Concept, Douai · <a href="mentions-legales.html">Mentions légales</a> · Site créé par <a href="https://polowagency.fr" target="_blank" rel="noopener">POLOW<span class="sr-only"> (nouvel onglet)</span></a></p>
-      <a class="ft-up" href="#top" aria-label="Retour en haut">↑</a>
-    </div>
-  </footer>
-
-  <div class="dock" id="dock">
-    <a class="btn b2" href="tel:+33327080781">Appeler</a>
-    <a class="btn b1" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Réserver<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
+<!-- HEADER -->
+<header id="hdr">
+  <div class="hd">
+    <a href="#hero" class="logo"><img src="assets/img/logo-mk.webp" width="197" height="160" alt="MK Concept, coiffeur à Douai"></a>
+    <nav aria-label="Menu principal">
+      <a href="#services">Prestations</a>
+      <a href="#galerie">Réalisations</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn-resa" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Réserver<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
   </div>
+</header>
 
-  <dialog class="hours-dialog" id="hours" aria-labelledby="hours-title">
-    <div class="hours-dialog__in">
-      <div class="hours-dialog__head"><h2 id="hours-title">Horaires</h2><button type="button" class="hours-dialog__close" data-close-hours aria-label="Fermer">×</button></div>
-      <p class="hours-dialog__status"><span class="dot" id="dialog-dot"></span><span id="dialog-status"></span></p>
-      <table class="hours"><tbody>
-        <tr data-day="1"><th scope="row">Lundi</th><td>14h – 18h</td></tr>
-        <tr data-day="2"><th scope="row">Mardi</th><td>9h30 – 19h</td></tr>
-        <tr data-day="3"><th scope="row">Mercredi</th><td>9h30 – 19h</td></tr>
-        <tr data-day="4"><th scope="row">Jeudi</th><td>10h – 20h</td></tr>
-        <tr data-day="5"><th scope="row">Vendredi</th><td>9h – 19h</td></tr>
-        <tr data-day="6"><th scope="row">Samedi</th><td>9h – 18h</td></tr>
-        <tr data-day="0"><th scope="row">Dimanche</th><td>Fermé</td></tr>
-      </tbody></table>
-      <p class="hours-dialog__addr">235 rue de Paris, 59500 Douai<br><a class="link" href="tel:+33327080781">03 27 08 07 81</a></p>
-      <div class="hours-dialog__btns"><a class="btn b1" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener">Réserver<span class="sr-only"> sur Planity (nouvel onglet)</span></a><a class="btn b2" href="https://www.google.com/maps/dir/?api=1&amp;destination=235+rue+de+Paris+59500+Douai" target="_blank" rel="noopener">Itinéraire<span class="sr-only"> (Maps, nouvel onglet)</span></a></div>
+<main>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-chip">
+      <span class="chip-dot" aria-hidden="true"></span>
+      Coiffeur · Barbier · Head spa · Douai
     </div>
-  </dialog>
+    <h1>On vous écoute,<br><em>avant de couper.</em></h1>
+    <p class="hero-sub">Salon de coiffure à Douai, rue de Paris. Femmes, hommes, barbe et head spa, avec Karine et son équipe. Noté 4,9/5 par 410 clients.</p>
+    <div class="hero-ctas">
+      <a class="btn-p" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-cal"/></svg>Prendre rendez-vous<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
+      <a href="tel:+33327080781" class="btn-s"><svg aria-hidden="true"><use href="#i-tel"/></svg>03 27 08 07 81</a>
+    </div>
+  </div>
+</section>
 
-  <script src="assets/js/lenis.min.js"></script>
-  <script type="module" src="assets/js/site.js"></script>
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-label">Prestations</div>
+      <h2>Ce qu'on fait, bien fait.</h2>
+    </div>
+    <div class="cards rv">
+      <div class="card">
+        <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-ciseaux"/></svg></div>
+        <div class="card-cat">Femme</div>
+        <h3>Coiffure femme</h3>
+        <p>Coupe, brushing, permanente. On écoute avant de couper, et on adapte à vos cheveux.</p>
+        <div class="ctags"><span class="ctag">Coupe</span><span class="ctag">Brushing</span><span class="ctag">Permanente</span></div>
+      </div>
+      <div class="card accent">
+        <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-couleur"/></svg></div>
+        <div class="card-cat">Couleur</div>
+        <h3>Couleurs & techniques</h3>
+        <p>Balayage, ombré, mèches, coloration végétale à l'argile. Le résultat se discute avant.</p>
+        <div class="ctags"><span class="ctag">Balayage</span><span class="ctag">Olaplex</span><span class="ctag">Végétal</span></div>
+      </div>
+      <div class="card">
+        <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-peigne"/></svg></div>
+        <div class="card-cat">Homme</div>
+        <h3>Coupe & dégradé</h3>
+        <p>Coupe classique, dégradé, contours, mèches. Tarif étudiant et formules abonné.</p>
+        <div class="ctags"><span class="ctag">Coupe</span><span class="ctag">Dégradé</span><span class="ctag">Enfant</span></div>
+      </div>
+      <div class="card">
+        <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-rasoir"/></svg></div>
+        <div class="card-cat">Barbier</div>
+        <h3>Barbe</h3>
+        <p>Taille, contours et rasage à l'ancienne. Un moment rien que pour la barbe.</p>
+        <div class="ctags"><span class="ctag">Taille</span><span class="ctag">Rasage</span></div>
+      </div>
+      <div class="card">
+        <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-spa"/></svg></div>
+        <div class="card-cat">Détente</div>
+        <h3>Head spa</h3>
+        <p>Massage du cuir chevelu inspiré du shiatsu, soin et coiffage. Une vraie pause.</p>
+        <div class="ctags"><span class="ctag">Massage</span><span class="ctag">Soin</span><span class="ctag">Visage</span></div>
+      </div>
+      <div class="card">
+        <div class="card-ico"><svg class="ico" aria-hidden="true"><use href="#i-bague"/></svg></div>
+        <div class="card-cat">Mariage</div>
+        <h3>Mariée</h3>
+        <p>Essai, chignon, maquillage. Au salon ou à domicile, pour vous et vos invitées.</p>
+        <div class="ctags"><span class="ctag">Chignon</span><span class="ctag">Make-up</span><span class="ctag">À domicile</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-label">Réalisations</div>
+      <h2>Sorti du fauteuil.</h2>
+    </div>
+    <div class="gal-grid rv">
+      <figure class="gal-item wide">
+        <img src="assets/img/photo-mariage.webp" width="1144" height="858" alt="Deux femmes en peignoir devant une robe de mariée, coiffées pour le mariage" loading="lazy" decoding="async">
+        <div class="gal-badge">Mariage</div>
+        <figcaption class="gal-overlay"><div class="gal-label"><strong>Coiffure de mariée</strong><span>Préparation au salon</span></div></figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="assets/img/photo-chignon.webp" width="840" height="1120" alt="Chignon bas orné d'une branche de perles, vu de dos" loading="lazy" decoding="async">
+        <figcaption class="gal-overlay"><div class="gal-label"><strong>Chignon perles</strong></div></figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="assets/img/photo-platine.webp" width="840" height="1050" alt="Coupe courte texturée, couleur platine, vue de profil" loading="lazy" decoding="async">
+        <figcaption class="gal-overlay"><div class="gal-label"><strong>Court platine</strong></div></figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="assets/img/gamme-femme.webp" width="840" height="1050" alt="Carré blond balayé, vu de dos au fauteuil" loading="lazy" decoding="async">
+        <figcaption class="gal-overlay"><div class="gal-label"><strong>Carré balayé</strong></div></figcaption>
+      </figure>
+      <figure class="gal-item">
+        <img src="assets/img/photo-degrade-2.webp" width="840" height="1050" alt="Dégradé net et dessus texturé, vu de profil" loading="lazy" decoding="async">
+        <figcaption class="gal-overlay"><div class="gal-label"><strong>Dégradé texturé</strong></div></figcaption>
+      </figure>
+    </div>
+    <div style="text-align:center;margin-top:32px" class="rv">
+      <a href="https://www.instagram.com/mkconceptdouai/" target="_blank" rel="noopener" class="btn-s"><svg aria-hidden="true"><use href="#i-insta"/></svg>Toutes nos réalisations sur Instagram<span class="sr-only"> (nouvel onglet)</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section id="tarifs">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-label">Tarifs</div>
+      <h2>Simple & transparent.</h2>
+    </div>
+    <div class="tarifs-wrap rv">
+      <div class="tbloc">
+        <div class="t-ico"><svg class="ico" aria-hidden="true"><use href="#i-ciseaux"/></svg></div>
+        <div class="t-cat">Femme</div>
+        <h3>Coiffure femme</h3>
+        <div class="t-row"><span>Shampoing, coupe, coiffage</span><span class="t-prix">dès 41 €</span></div>
+        <div class="t-row"><span>Shampoing, brushing</span><span class="t-prix">dès 20 €</span></div>
+        <div class="t-row"><span>Permanente, brushing</span><span class="t-prix">dès 63 €</span></div>
+        <div class="t-row"><span>Frange</span><span class="t-prix">5 €</span></div>
+        <p class="t-note">Selon la longueur des cheveux.</p>
+      </div>
+      <div class="tbloc hi">
+        <div class="t-ico"><svg class="ico" aria-hidden="true"><use href="#i-couleur"/></svg></div>
+        <div class="t-cat">Couleur</div>
+        <h3>Techniques couleur</h3>
+        <div class="t-row"><span>Coloration, coiffage</span><span class="t-prix">dès 55 €</span></div>
+        <div class="t-row"><span>Balayage, brushing</span><span class="t-prix">dès 58 €</span></div>
+        <div class="t-row"><span>Ombré, balayage ou mèches</span><span class="t-prix">dès 69 €</span></div>
+        <div class="t-row"><span>Balayage végétal à l'argile</span><span class="t-prix">dès 50 €</span></div>
+        <p class="t-note">Le résultat se discute avant, au salon.</p>
+      </div>
+      <div class="tbloc">
+        <div class="t-ico"><svg class="ico" aria-hidden="true"><use href="#i-peigne"/></svg></div>
+        <div class="t-cat">Homme & Barbier</div>
+        <h3>Coupe & barbe</h3>
+        <div class="t-row"><span>Shampoing, coupe, coiffage</span><span class="t-prix">25 €</span></div>
+        <div class="t-row"><span>Étudiant (16 à 25 ans)</span><span class="t-prix">20 €</span></div>
+        <div class="t-row"><span>Enfant</span><span class="t-prix">dès 12 €</span></div>
+        <div class="t-row"><span>Barbe, rasage</span><span class="t-prix">sur Planity</span></div>
+        <p class="t-note">Un doute ? <a href="tel:+33327080781">03 27 08 07 81</a></p>
+      </div>
+      <div class="tbloc">
+        <div class="t-ico"><svg class="ico" aria-hidden="true"><use href="#i-spa"/></svg></div>
+        <div class="t-cat">Détente</div>
+        <h3>Head spa</h3>
+        <div class="t-row"><span>Head spa Kami, avec coiffage · 1 h</span><span class="t-prix">70 €</span></div>
+        <div class="t-row"><span>Head spa Kami Kao, soin visage et coiffage · 1 h 30</span><span class="t-prix">99 €</span></div>
+        <p class="t-note">Massage du cuir chevelu inspiré du shiatsu.</p>
+      </div>
+      <div class="tbloc">
+        <div class="t-ico"><svg class="ico" aria-hidden="true"><use href="#i-bague"/></svg></div>
+        <div class="t-cat">Mariage</div>
+        <h3>Mariée</h3>
+        <div class="t-row"><span>Essai de coiffure</span><span class="t-prix">60 €</span></div>
+        <div class="t-row"><span>Chignon de mariée</span><span class="t-prix">130 €</span></div>
+        <div class="t-row"><span>Maquillage</span><span class="t-prix">40 €</span></div>
+        <p class="t-note">Au salon ou à domicile. Sur rendez-vous : <a href="tel:+33327080781">03 27 08 07 81</a></p>
+      </div>
+    </div>
+    <p class="t-src rv">Tarifs Planity, novembre 2026. Le prix exact s'affiche à la réservation.</p>
+  </div>
+</section>
+
+<!-- RÉSERVATION -->
+<section id="reservation">
+  <div class="wrap">
+    <div class="resa-cta-wrap rv">
+      <div class="sec-head">
+        <div class="sec-label">Rendez-vous</div>
+        <h2>Réserver en quelques clics.</h2>
+      </div>
+      <p>Simple, rapide et sans téléphone. Choisissez votre prestation, votre coiffeur et votre créneau sur Planity, en 2 minutes.</p>
+      <div class="resa-cta-perks">
+        <div class="resa-perk">Confirmation immédiate</div>
+        <div class="resa-perk">Du lundi au samedi</div>
+        <div class="resa-perk">4,9/5 sur 410 avis</div>
+      </div>
+      <a class="btn-p" href="https://www.planity.com/mk-concept-59500-douai" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-cal"/></svg>Prendre rendez-vous<span class="sr-only"> sur Planity (nouvel onglet)</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-label">Nous trouver</div>
+      <h2>On est à Douai.</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="rv">
+        <div class="contact-items">
+          <div class="ci">
+            <div class="ci-ico"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg></div>
+            <div><div class="ci-lbl">Adresse</div><div class="ci-val"><a href="https://www.google.com/maps/dir/?api=1&amp;destination=235+rue+de+Paris+59500+Douai" target="_blank" rel="noopener">235 rue de Paris<br>59500 Douai</a></div></div>
+          </div>
+          <div class="ci">
+            <div class="ci-ico"><svg class="ico" aria-hidden="true"><use href="#i-tel"/></svg></div>
+            <div><div class="ci-lbl">Téléphone</div><div class="ci-val"><a href="tel:+33327080781">03 27 08 07 81</a></div></div>
+          </div>
+          <div class="ci">
+            <div class="ci-ico"><svg class="ico" aria-hidden="true"><use href="#i-horloge"/></svg></div>
+            <div>
+              <div class="ci-lbl">Horaires</div>
+              <div class="ci-val">
+                <div class="horaires" id="horaires">
+                  <span class="h-j" data-j="1">Lundi</span><span class="h-h" data-j="1">14h00 – 18h00</span>
+                  <span class="h-j" data-j="2">Mardi</span><span class="h-h" data-j="2">9h30 – 19h00</span>
+                  <span class="h-j" data-j="3">Mercredi</span><span class="h-h" data-j="3">9h30 – 19h00</span>
+                  <span class="h-j" data-j="4">Jeudi</span><span class="h-h" data-j="4">10h00 – 20h00</span>
+                  <span class="h-j" data-j="5">Vendredi</span><span class="h-h" data-j="5">9h00 – 19h00</span>
+                  <span class="h-j" data-j="6">Samedi</span><span class="h-h" data-j="6">9h00 – 18h00</span>
+                  <span class="h-j" data-j="0">Dimanche</span><span class="h-h h-off" data-j="0">Fermé</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-ico"><svg class="ico" aria-hidden="true"><use href="#i-insta"/></svg></div>
+            <div><div class="ci-lbl">Instagram</div><div class="ci-val"><a href="https://www.instagram.com/mkconceptdouai/" target="_blank" rel="noopener">@mkconceptdouai</a></div></div>
+          </div>
+        </div>
+        <div class="contact-cta">
+          <h3>Vous préférez appeler ?</h3>
+          <p>On répond du lundi au samedi, aux heures d'ouverture.</p>
+          <a href="tel:+33327080781" class="btn-p"><svg aria-hidden="true"><use href="#i-tel"/></svg>03 27 08 07 81</a>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps?q=MK+Concept,+235+rue+de+Paris,+59500+Douai&amp;output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Plan d'accès à MK Concept, 235 rue de Paris à Douai"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div class="ft-logo"><img src="assets/img/logo-mk.webp" width="197" height="160" alt="MK Concept" loading="lazy" decoding="async"></div>
+      <div class="ft-info">235 rue de Paris · 59500 Douai · 03 27 08 07 81</div>
+      <div class="ft-links"><a href="https://www.instagram.com/mkconceptdouai/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/MkConceptDouai/" target="_blank" rel="noopener">Facebook</a></div>
+    </div>
+    <div class="ft-sep"></div>
+    <div class="ft-bottom">
+      <span>© <span data-year>2026</span> MK Concept · Site créé par <a href="https://polowagency.fr" target="_blank" rel="noopener">POLOW</a></span>
+      <div class="ft-links"><a href="mentions-legales.html">Mentions légales</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── HEADER SCROLL ─────────────────────────────
+const hdr = document.getElementById('hdr');
+const onScroll = () => hdr.classList.toggle('up', scrollY > 30);
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+// ── REVEAL ────────────────────────────────────
+if ('IntersectionObserver' in window) {
+  const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } }), { threshold: .1 });
+  document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+} else {
+  document.querySelectorAll('.rv').forEach(el => el.classList.add('in'));
+}
+
+// ── JOUR EN COURS DANS LES HORAIRES ───────────
+const j = new Date().getDay();
+document.querySelectorAll(`#horaires [data-j="${j}"]`).forEach(el => el.classList.add('auj'));
+document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
+</script>
 </body>
 </html>
